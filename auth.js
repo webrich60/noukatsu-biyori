@@ -1,19 +1,21 @@
+import {prepareRecord,writeRecord} from './storage.js?v=1.4.1';
 import {firebaseConfig} from './firebase-config.js';
 const root=document.getElementById('app');
 const configured=Boolean(firebaseConfig.apiKey&&firebaseConfig.authDomain&&firebaseConfig.projectId&&firebaseConfig.appId);
 const escape=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const renderShell=(body)=>{root.innerHTML=`<main class="auth-wrap"><section class="auth-card"><img class="auth-owl" src="assets/owl.png" alt="公式マスコットのフクロウ"><h1>やさしい脳活日和</h1>${body}</section></main>`;};
 let started=false;
-function startApp(user){if(started)return;started=true;
+async function startApp(user){if(started)return;started=true;
  window.NOUKATSU_USER=user?{uid:user.uid,email:user.email}:null;
  const key=user?`noukatsu-v1-user-${user.uid}`:'noukatsu-v1-data';
  // 未ログイン時の保存記録は別アカウントへ自動的にコピーしない。
  if(user&&!localStorage.getItem(key)&&localStorage.getItem('noukatsu-v1-data')){
   if(confirm('この端末に以前の脳活記録があります。ログイン中のアカウントにコピーしますか？（ログイン後にクラウドへ保存されます）')){
-   localStorage.setItem(key,localStorage.getItem('noukatsu-v1-data'));try{window.NOUKATSU_CLOUD_SAVE?.(JSON.parse(localStorage.getItem(key)))}catch{}
+   const copy=JSON.parse(localStorage.getItem('noukatsu-v1-data'));await writeRecord(key,copy);try{localStorage.setItem(key,JSON.stringify(copy))}catch{};try{window.NOUKATSU_CLOUD_SAVE?.(copy)}catch{}
   }
  }
- const js=document.createElement('script');js.src='app.js?v=1.4.0';js.onerror=()=>renderShell('<p>アプリを読み込めませんでした。ページを再読み込みしてください。</p>');document.body.append(js);
+ window.NOUKATSU_INITIAL_DATA=await prepareRecord(key);
+ const js=document.createElement('script');js.src='app.js?v=1.4.1';js.onerror=()=>renderShell('<p>アプリを読み込めませんでした。ページを再読み込みしてください。</p>');document.body.append(js);
 }
 window.NOUKATSU_SIGN_OUT=()=>location.reload();
 if(!configured){
@@ -35,6 +37,6 @@ if(!configured){
   };
   renderShell('<p>ログイン状態を確認しています…</p>');
   await getRedirectResult(auth).catch(()=>null);
-  onAuthStateChanged(auth,async user=>{if(!user){authPage();return}if(started)return;try{const {initializeSync,queueSave}=await import('./cloud-sync.js?v=1.4.0');await initializeSync(user);window.NOUKATSU_CLOUD_SAVE=(data)=>queueSave(user.uid,data);}catch(e){console.warn('Cloud sync unavailable:',e);window.NOUKATSU_SYNC_STATUS='クラウド同期を利用できません。端末内で利用できます';}startApp(user)},e=>authPage(`認証エラー: ${e.code}`));
+  onAuthStateChanged(auth,async user=>{if(!user){authPage();return}if(started)return;try{const {initializeSync,queueSave}=await import('./cloud-sync.js?v=1.4.1');await initializeSync(user);window.NOUKATSU_CLOUD_SAVE=(data)=>queueSave(user.uid,data);}catch(e){console.warn('Cloud sync unavailable:',e);window.NOUKATSU_SYNC_STATUS='クラウド同期を利用できません。端末内で利用できます';}startApp(user)},e=>authPage(`認証エラー: ${e.code}`));
  }catch(e){renderShell(`<p>認証サービスを読み込めませんでした。</p><p class="auth-note">GitHub PagesなどHTTPSの公開先で開いてください。${escape(e.message)}</p>`)}
 }

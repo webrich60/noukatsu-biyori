@@ -1,3 +1,4 @@
+import {prepareRecord,writeRecord} from './storage.js?v=1.4.1';
 // Per-user Firestore backup/sync. Firebase Auth user ID is the sole document owner.
 // Never put billing entitlements, admin permissions, or API secrets in this writable document.
 import {firebaseConfig} from './firebase-config.js';
@@ -12,7 +13,7 @@ export async function initializeSync(user){
  const ref=doc(db,'users',user.uid),key=keyFor(user.uid);
  let cloud;
  try{const snap=await getDoc(ref);if(snap.exists()){const rec=snap.data();if(valid(rec.gameData))cloud=rec.gameData;}}catch(e){status('クラウド読込失敗：端末内で利用できます');return;}
- let local=null;try{local=JSON.parse(localStorage.getItem(key));}catch{}
+ let local=await prepareRecord(key);
  if(cloud){
    // Never silently overwrite user data from this device.
    if(valid(local) && JSON.stringify(local)!==JSON.stringify(cloud)){
@@ -24,7 +25,7 @@ export async function initializeSync(user){
 ※安全のため、必要なら先にJSONでバックアップしてください。`);
      if(preferLocal){queueSave(user.uid,local);status('端末の記録をクラウドへ保存中');return;}
    }
-   try{localStorage.setItem(key,JSON.stringify(cloud));status('クラウドの記録を読み込みました');}catch{status('端末への記録保存に失敗しました');}
+   try{await writeRecord(key,cloud);try{localStorage.setItem(key,JSON.stringify(cloud))}catch{};status('クラウドの記録を読み込みました');}catch{status('端末への記録保存に失敗しました');}
  }else if(valid(local)){
    queueSave(user.uid,local);status('初回バックアップ中');
  }else status('クラウド同期の準備ができました');
