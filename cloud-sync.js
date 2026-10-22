@@ -1,4 +1,4 @@
-import {prepareRecord,writeRecord} from './storage.js?v=1.4.1';
+import {prepareRecord,writeRecord} from './storage.js?v=2.0.0-rc1';
 // Per-user Firestore backup/sync. Firebase Auth user ID is the sole document owner.
 // Never put billing entitlements, admin permissions, or API secrets in this writable document.
 import {firebaseConfig} from './firebase-config.js';

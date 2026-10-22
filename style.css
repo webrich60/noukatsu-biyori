@@ -22,3 +22,15 @@
 
 /* Integrated v1.4: uses existing card design for the eighth activity */
 .kanji{background:#f1f1ff}.grade-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:12px 0 24px}.grade-btn{min-height:56px;border:2px solid #b6cedc;background:#fff;border-radius:16px;color:#17314c;font-weight:850;font-size:18px}.grade-btn.chosen{background:#d7efff;border-color:#2473ba}.skill-line{display:grid;grid-template-columns:1fr auto;align-items:center;gap:5px;margin:15px 0;font-size:16px}.skill-track{grid-column:1/-1;background:#e0e8ec;border-radius:14px;height:13px;overflow:hidden}.skill-track div{height:100%;border-radius:14px;background:#6ba6c9}.skill-line span{font-weight:800;color:#234b65;font-size:14px}
+
+/* v1.4.2 tested analytics and playful achievement */
+.achievement-line{background:#fff8e2;border:1.5px solid #dec77e;padding:13px 15px;border-radius:17px;color:#17314c;font-size:17px;font-weight:850;margin:12px 0}
+.achievement-line span{display:block;font-size:14px;color:#425568;margin-top:3px}
+.analysis-intro{background:#f2f8ff;border:1.5px solid #c5dcea;padding:14px;border-radius:16px;color:#17314c}.analysis-intro p{font-size:14px;margin:7px 0 0;line-height:1.7}
+.skill-detail{grid-column:1/-1;font-size:13px;color:#44586b;line-height:1.6}
+
+/* v1.5: clear progress without medical overclaims */
+.period-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.period-card{background:#edf7fc;border:1.5px solid #adcbdc;border-radius:14px;padding:11px 6px;text-align:center;display:flex;flex-direction:column;gap:3px}.period-card strong{font-size:15px}.period-card b{font-size:22px;color:#183f63}.period-card small{font-size:12px;color:#365269}.coverage-stats{margin-bottom:8px}.kanji{background:#f1f1ff}
+
+/* v2.0 ステップアップと効果音：既存デザインを維持 */
+.sound-settings{border:2px solid #a9c7ca;border-radius:18px;padding:16px;margin:16px 0;background:#f5fbf9;color:#183a39}.sound-settings h3{margin:0 0 12px}.sound-settings input[type=range]{width:100%;min-height:32px;accent-color:#257c81}.difficulty-choices{display:flex;align-items:center;justify-content:space-between;gap:9px;margin:12px 0 20px}.difficulty-choices button{font-size:16px;padding:12px;border:2px solid #a3bdc2;border-radius:14px;background:#fff;color:#163d43;font-weight:700}.difficulty-choices strong{font-size:20px;white-space:nowrap}

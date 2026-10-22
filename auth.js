@@ -1,4 +1,4 @@
-import {prepareRecord,writeRecord} from './storage.js?v=1.4.1';
+import {prepareRecord,writeRecord} from './storage.js?v=2.0.0-rc1';
 import {firebaseConfig} from './firebase-config.js';
 const root=document.getElementById('app');
 const configured=Boolean(firebaseConfig.apiKey&&firebaseConfig.authDomain&&firebaseConfig.projectId&&firebaseConfig.appId);
@@ -15,7 +15,7 @@ async function startApp(user){if(started)return;started=true;
   }
  }
  window.NOUKATSU_INITIAL_DATA=await prepareRecord(key);
- const js=document.createElement('script');js.src='app.js?v=1.4.1';js.onerror=()=>renderShell('<p>アプリを読み込めませんでした。ページを再読み込みしてください。</p>');document.body.append(js);
+ const js=document.createElement('script');js.src='app.js?v=2.0.0-rc1';js.onerror=()=>renderShell('<p>アプリを読み込めませんでした。ページを再読み込みしてください。</p>');document.body.append(js);
 }
 window.NOUKATSU_SIGN_OUT=()=>location.reload();
 if(!configured){
