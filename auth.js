@@ -13,7 +13,7 @@ function startApp(user){if(started)return;started=true;
    localStorage.setItem(key,localStorage.getItem('noukatsu-v1-data'));try{window.NOUKATSU_CLOUD_SAVE?.(JSON.parse(localStorage.getItem(key)))}catch{}
   }
  }
- const js=document.createElement('script');js.src='app.js';js.onerror=()=>renderShell('<p>アプリを読み込めませんでした。ページを再読み込みしてください。</p>');document.body.append(js);
+ const js=document.createElement('script');js.src='app.js?v=1.4.0';js.onerror=()=>renderShell('<p>アプリを読み込めませんでした。ページを再読み込みしてください。</p>');document.body.append(js);
 }
 window.NOUKATSU_SIGN_OUT=()=>location.reload();
 if(!configured){
@@ -35,6 +35,6 @@ if(!configured){
   };
   renderShell('<p>ログイン状態を確認しています…</p>');
   await getRedirectResult(auth).catch(()=>null);
-  onAuthStateChanged(auth,async user=>{if(!user){authPage();return}if(started)return;try{const {initializeSync,queueSave}=await import('./cloud-sync.js');await initializeSync(user);window.NOUKATSU_CLOUD_SAVE=(data)=>queueSave(user.uid,data);}catch(e){console.warn('Cloud sync unavailable:',e);window.NOUKATSU_SYNC_STATUS='クラウド同期を利用できません。端末内で利用できます';}startApp(user)},e=>authPage(`認証エラー: ${e.code}`));
+  onAuthStateChanged(auth,async user=>{if(!user){authPage();return}if(started)return;try{const {initializeSync,queueSave}=await import('./cloud-sync.js?v=1.4.0');await initializeSync(user);window.NOUKATSU_CLOUD_SAVE=(data)=>queueSave(user.uid,data);}catch(e){console.warn('Cloud sync unavailable:',e);window.NOUKATSU_SYNC_STATUS='クラウド同期を利用できません。端末内で利用できます';}startApp(user)},e=>authPage(`認証エラー: ${e.code}`));
  }catch(e){renderShell(`<p>認証サービスを読み込めませんでした。</p><p class="auth-note">GitHub PagesなどHTTPSの公開先で開いてください。${escape(e.message)}</p>`)}
 }

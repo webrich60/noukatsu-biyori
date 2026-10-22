@@ -16,12 +16,12 @@ export async function initializeSync(user){
  if(cloud){
    // Never silently overwrite user data from this device.
    if(valid(local) && JSON.stringify(local)!==JSON.stringify(cloud)){
-     const preferLocal=confirm('この端末の記録とクラウドの記録が異なります。
+     const preferLocal=confirm(`この端末の記録とクラウドの記録が異なります。
 
 「OK」：この端末の記録をクラウドへ保存
 「キャンセル」：クラウドの記録をこの端末に読み込む
 
-※安全のため、必要なら先にJSONでバックアップしてください。');
+※安全のため、必要なら先にJSONでバックアップしてください。`);
      if(preferLocal){queueSave(user.uid,local);status('端末の記録をクラウドへ保存中');return;}
    }
    try{localStorage.setItem(key,JSON.stringify(cloud));status('クラウドの記録を読み込みました');}catch{status('端末への記録保存に失敗しました');}

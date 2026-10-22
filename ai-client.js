@@ -1,16 +1,10 @@
-// Browser connector. Gemini secret stays in Firebase Functions, never in GitHub Pages.
-const cfg=window.NOUKATSU_AI_CONFIG;
-if(cfg?.enabled && cfg.firebase?.apiKey && cfg.firebase?.projectId){
-  const base='https://www.gstatic.com/firebasejs/11.6.0/';
-  try{
-    const [{initializeApp},{getAuth,GoogleAuthProvider,signInWithPopup},{getFunctions,httpsCallable}]=await Promise.all([
-      import(base+'firebase-app.js'),import(base+'firebase-auth.js'),import(base+'firebase-functions.js')
-    ]);
-    const app=(await import(base+'firebase-app.js')).getApps()[0] || initializeApp(cfg.firebase);const auth=getAuth(app);const fn=getFunctions(app,'asia-northeast1');
-    const getPrompt=httpsCallable(fn,'newBrainPrompt');
-    window.noukatsuAI={
-      async generate(kind){if(!auth.currentUser)await signInWithPopup(auth,new GoogleAuthProvider());const result=await getPrompt({kind});return String(result.data.prompt||'')},
-      signedIn(){return !!auth.currentUser}
-    };
-  }catch(err){console.warn('AI接続を準備できませんでした',err)}
-}
+// Gemini is called ONLY through authenticated server-side Firebase callable functions.
+import {firebaseConfig} from './firebase-config.js';
+try{
+ const [{getApp},{getAuth},{getFunctions,httpsCallable}]=await Promise.all([
+ import('https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js'),
+ import('https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js'),
+ import('https://www.gstatic.com/firebasejs/10.14.1/firebase-functions.js')]);
+ const auth=getAuth(getApp());const call=httpsCallable(getFunctions(getApp(),'asia-northeast1'),'newBrainPrompt');
+ window.noukatsuAI={async generate(kind){if(!auth.currentUser)throw Error('ログインしてください');const res=await call({kind});return String(res.data?.prompt||'')},signedIn(){return !!auth.currentUser}};
+}catch(err){console.warn('AIサービスの準備ができませんでした',err)}
