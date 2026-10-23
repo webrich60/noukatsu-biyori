@@ -1773,74 +1773,9 @@
   @media(min-width:700px){.game-menu-card{min-height:166px}.game-card-art{width:108px;height:90px}.game-card-title{font-size:16px}}
   @media(max-width:370px){.game-card-art{width:82px;height:72px}.game-card-title{font-size:14px}.game-menu-card{min-height:147px}}
   @media(prefers-reduced-motion:reduce){.game-menu-card{transition:none}}
-
-  /* v1.3: ホームではカード一覧だけをスクロール。ゲーム画面は従来どおり。 */
-  body.home-mode {
-    height: 100dvh;
-    min-height: 0;
-    overflow: hidden;
-    padding-bottom: max(8px, env(safe-area-inset-bottom));
-  }
-  body.home-mode > header { flex: 0 0 auto; }
-  body.home-mode > main {
-    flex: 1 1 auto;
-    min-height: 0;
-    overflow: hidden;
-    padding-bottom: 0;
-  }
-  body.home-mode #homeScreen {
-    height: 100%;
-    max-height: none !important;
-    min-height: 0;
-    overflow: hidden !important;
-  }
-  #gameCardScroll.game-list-scroll {
-    flex: 1 1 auto;
-    min-height: 0;
-    width: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    overscroll-behavior-y: contain;
-    -webkit-overflow-scrolling: touch;
-    touch-action: pan-y;
-    padding: 4px 5px 14px 2px;
-    scrollbar-width: thin;
-    scrollbar-color: #92bcae #eaf5ef;
-    border-radius: 13px;
-  }
-  #gameCardScroll::-webkit-scrollbar { width: 7px; }
-  #gameCardScroll::-webkit-scrollbar-thumb { background: #92bcae; border-radius: 12px; }
-  #gameCardScroll::-webkit-scrollbar-track { background: #eaf5ef; border-radius: 12px; }
-  #gameCardScroll:focus-visible { outline: 3px solid #27765f; outline-offset: -3px; }
-  #gameCardGrid { width: 100%; padding-bottom: 4px; }
-  /* 画面の縦幅を節約。ゲーム選択は十分大きいタップ領域を確保。 */
-  @media (max-width: 619px) {
-    .game-menu-card { min-height: 123px; padding: 7px 4px; gap: 3px; }
-    .game-card-art { width: 82px; height: 70px; }
-    .game-card-title { font-size: 14px; }
-    .game-card-desc { font-size: 10px; }
-  }
-  /* タブレットでは3列にして、縦スクロール量をさらに軽減。 */
-  @media (min-width: 620px) {
-    #homeScreen #gameCardGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .game-menu-card { min-height: 156px; }
-  }
-  @media (max-height: 650px) and (min-width: 620px) {
-    .game-menu-card { min-height: 124px; }
-    .game-card-art { height: 65px; width: 79px; }
-  }
-  /* 極端に低い画面や横向きでは、上部設定が隠れないよう全体スクロールを許可。 */
-  @media (max-height: 520px) {
-    body.home-mode { height: auto; min-height: 100dvh; overflow-y: auto; }
-    body.home-mode > main { min-height: 0; overflow: visible; }
-    body.home-mode #homeScreen { height: auto; overflow: visible !important; }
-    #gameCardScroll.game-list-scroll { flex: 0 0 auto; height: min(55dvh, 300px); min-height: 160px; }
-  }
-  /* スワイプをブラウザに渡し、カードはクリックで確実に起動。 */
-  #gameCardScroll .game-menu-card { touch-action: pan-y; }
 </style>
 </head>
-<body id="appBody" class="home-mode w-full flex flex-col justify-between items-center p-2 sm:p-3">
+<body id="appBody" class="w-full flex flex-col justify-between items-center p-2 sm:p-3">
 
     <!-- ヘッダーエリア -->
     <header class="w-full max-w-lg bg-white/95 backdrop-blur-md border-2 border-emerald-200 rounded-2xl px-2.5 py-1.5 shadow-md flex justify-between items-center flex-shrink-0 mb-1">
@@ -1931,12 +1866,11 @@
                         フクロウと楽しむ10の脳活ゲーム
                     </h2>
                 </div>
-                <span class="text-[12px] text-amber-800 font-bold">↕ スクロール</span>
+                <span class="text-[12px] text-amber-800 font-bold">タッチしてスタート</span>
             </div>
 
-            <!-- ④ ゲーム一覧だけを上下スクロール。ボタンは独立してタップ可能 -->
-            <div id="gameCardScroll" class="game-list-scroll" role="region" aria-label="10種類の脳活ゲーム。上下にスクロールして選べます" tabindex="0">
-              <div id="gameCardGrid" class="grid grid-cols-2 gap-2.5">
+            <!-- ④ 2列×5行 カード型グリッド（下端に余裕を持たせ、どの機種でも見切れずにタップ可能） -->
+            <div class="grid grid-cols-2 gap-2.5 flex-grow my-0.5 pb-4">
                 
                 <!-- 1: 笑顔タッチ -->
                 <button type="button" onclick="startGame('whack')" class="menu-card game-menu-card bg-orange-50/90 border-bold-orange" aria-label="笑顔タッチを始める">
@@ -2008,7 +1942,6 @@
                     <span class="game-card-desc">違うものを探そう</span>
                 </button>
 
-              </div>
             </div>
         </section>
 
@@ -2510,8 +2443,6 @@
         }
 
         function showScreen(screenId) {
-            // ホームだけ画面高を固定し、ゲーム一覧部分をスワイプで移動する
-            document.body.classList.toggle('home-mode', screenId === 'homeScreen');
             ['homeScreen', 'gameScreen', 'resultScreen'].forEach(id => {
                 const el = document.getElementById(id);
                 if (id === screenId) {
