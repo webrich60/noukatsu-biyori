@@ -1,1 +1,3915 @@
-<!doctype html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f8f7ee"><meta name="description" content="やさしい脳活日和。楽しく続ける脳活トレーニング"><meta name="robots" content="noindex,nofollow"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/owl.png"><title>やさしい脳活日和</title><link rel="stylesheet" href="style.css"></head><body><div id="app"></div><script src="kanji-bank.js?v=2.0.0-rc1"></script><script src="ai-config.js?v=2.0.0-rc1"></script><script type="module" src="auth.js?v=2.0.0-rc1"></script><script type="module" src="ai-client.js?v=2.0.0-rc1"></script></body></html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>やさしい脳活日和｜10の脳活ゲーム・テスト版</title>
+    <!-- Tailwind utilities: local CSS embedded for offline-safe static hosting -->
+    <style id="tailwind-local-utilities">
+/*! tailwindcss v4.1.10 | MIT License | https://tailwindcss.com */
+@layer properties;
+@layer theme, base, components, utilities;
+@layer theme {
+  :root, :host {
+    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;
+    --color-red-200: oklch(88.5% 0.062 18.334);
+    --color-red-400: oklch(70.4% 0.191 22.216);
+    --color-red-500: oklch(63.7% 0.237 25.331);
+    --color-red-600: oklch(57.7% 0.245 27.325);
+    --color-red-700: oklch(50.5% 0.213 27.518);
+    --color-orange-50: oklch(98% 0.016 73.684);
+    --color-orange-200: oklch(90.1% 0.076 70.697);
+    --color-orange-400: oklch(75% 0.183 55.934);
+    --color-orange-500: oklch(70.5% 0.213 47.604);
+    --color-orange-600: oklch(64.6% 0.222 41.116);
+    --color-orange-800: oklch(47% 0.157 37.304);
+    --color-amber-50: oklch(98.7% 0.022 95.277);
+    --color-amber-100: oklch(96.2% 0.059 95.617);
+    --color-amber-200: oklch(92.4% 0.12 95.746);
+    --color-amber-300: oklch(87.9% 0.169 91.605);
+    --color-amber-400: oklch(82.8% 0.189 84.429);
+    --color-amber-500: oklch(76.9% 0.188 70.08);
+    --color-amber-600: oklch(66.6% 0.179 58.318);
+    --color-amber-700: oklch(55.5% 0.163 48.998);
+    --color-amber-800: oklch(47.3% 0.137 46.201);
+    --color-amber-900: oklch(41.4% 0.112 45.904);
+    --color-amber-950: oklch(27.9% 0.077 45.635);
+    --color-yellow-50: oklch(98.7% 0.026 102.212);
+    --color-yellow-300: oklch(90.5% 0.182 98.111);
+    --color-yellow-400: oklch(85.2% 0.199 91.936);
+    --color-lime-50: oklch(98.6% 0.031 120.757);
+    --color-lime-300: oklch(89.7% 0.196 126.665);
+    --color-lime-950: oklch(27.4% 0.072 132.109);
+    --color-emerald-50: oklch(97.9% 0.021 166.113);
+    --color-emerald-100: oklch(95% 0.052 163.051);
+    --color-emerald-200: oklch(90.5% 0.093 164.15);
+    --color-emerald-300: oklch(84.5% 0.143 164.978);
+    --color-emerald-400: oklch(76.5% 0.177 163.223);
+    --color-emerald-500: oklch(69.6% 0.17 162.48);
+    --color-emerald-600: oklch(59.6% 0.145 163.225);
+    --color-emerald-700: oklch(50.8% 0.118 165.612);
+    --color-emerald-800: oklch(43.2% 0.095 166.913);
+    --color-emerald-900: oklch(37.8% 0.077 168.94);
+    --color-teal-50: oklch(98.4% 0.014 180.72);
+    --color-teal-300: oklch(85.5% 0.138 181.071);
+    --color-teal-400: oklch(77.7% 0.152 181.912);
+    --color-teal-600: oklch(60% 0.118 184.704);
+    --color-teal-900: oklch(38.6% 0.063 188.416);
+    --color-cyan-50: oklch(98.4% 0.019 200.873);
+    --color-cyan-300: oklch(86.5% 0.127 207.078);
+    --color-sky-50: oklch(97.7% 0.013 236.62);
+    --color-sky-100: oklch(95.1% 0.026 236.824);
+    --color-sky-200: oklch(90.1% 0.058 230.902);
+    --color-sky-300: oklch(82.8% 0.111 230.318);
+    --color-sky-400: oklch(74.6% 0.16 232.661);
+    --color-sky-500: oklch(68.5% 0.169 237.323);
+    --color-sky-700: oklch(50% 0.134 242.749);
+    --color-sky-800: oklch(44.3% 0.11 240.79);
+    --color-sky-900: oklch(39.1% 0.09 240.876);
+    --color-sky-950: oklch(29.3% 0.066 243.157);
+    --color-blue-50: oklch(97% 0.014 254.604);
+    --color-blue-100: oklch(93.2% 0.032 255.585);
+    --color-blue-300: oklch(80.9% 0.105 251.813);
+    --color-blue-400: oklch(70.7% 0.165 254.624);
+    --color-blue-500: oklch(62.3% 0.214 259.815);
+    --color-blue-600: oklch(54.6% 0.245 262.881);
+    --color-blue-700: oklch(48.8% 0.243 264.376);
+    --color-blue-800: oklch(42.4% 0.199 265.638);
+    --color-blue-950: oklch(28.2% 0.091 267.935);
+    --color-indigo-50: oklch(96.2% 0.018 272.314);
+    --color-indigo-400: oklch(67.3% 0.182 276.935);
+    --color-purple-50: oklch(97.7% 0.014 308.299);
+    --color-purple-100: oklch(94.6% 0.033 307.174);
+    --color-purple-300: oklch(82.7% 0.119 306.383);
+    --color-purple-950: oklch(29.1% 0.149 302.717);
+    --color-rose-50: oklch(96.9% 0.015 12.422);
+    --color-rose-100: oklch(94.1% 0.03 12.58);
+    --color-rose-300: oklch(81% 0.117 11.638);
+    --color-rose-500: oklch(64.5% 0.246 16.439);
+    --color-rose-600: oklch(58.6% 0.253 17.585);
+    --color-rose-700: oklch(51.4% 0.222 16.935);
+    --color-rose-800: oklch(45.5% 0.188 13.697);
+    --color-rose-900: oklch(41% 0.159 10.272);
+    --color-slate-900: oklch(20.8% 0.042 265.755);
+    --color-gray-50: oklch(98.5% 0.002 247.839);
+    --color-gray-100: oklch(96.7% 0.003 264.542);
+    --color-gray-300: oklch(87.2% 0.01 258.338);
+    --color-gray-500: oklch(55.1% 0.027 264.364);
+    --color-gray-600: oklch(44.6% 0.03 256.802);
+    --color-gray-700: oklch(37.3% 0.034 259.733);
+    --color-gray-800: oklch(27.8% 0.033 256.848);
+    --color-black: #000;
+    --color-white: #fff;
+    --spacing: 0.25rem;
+    --container-sm: 24rem;
+    --container-lg: 32rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
+    --text-5xl: 3rem;
+    --text-5xl--line-height: 1;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-weight-black: 900;
+    --tracking-wide: 0.025em;
+    --tracking-wider: 0.05em;
+    --tracking-widest: 0.1em;
+    --leading-tight: 1.25;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-2xl: 1rem;
+    --radius-3xl: 1.5rem;
+    --blur-xs: 4px;
+    --blur-md: 12px;
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+  }
+}
+@layer base {
+  *, ::after, ::before, ::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+  html, :host {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    -webkit-tap-highlight-color: transparent;
+  }
+  hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+  }
+  abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  code, kbd, samp, pre {
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
+    font-size: 1em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  table {
+    text-indent: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+  }
+  :-moz-focusring {
+    outline: auto;
+  }
+  progress {
+    vertical-align: baseline;
+  }
+  summary {
+    display: list-item;
+  }
+  ol, ul, menu {
+    list-style: none;
+  }
+  img, svg, video, canvas, audio, iframe, embed, object {
+    display: block;
+    vertical-align: middle;
+  }
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  button, input, select, optgroup, textarea, ::file-selector-button {
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+  }
+  :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: currentcolor;
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  textarea {
+    resize: vertical;
+  }
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  button, input:where([type="button"], [type="reset"], [type="submit"]), ::file-selector-button {
+    appearance: button;
+  }
+  ::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [hidden]:where(:not([hidden="until-found"])) {
+    display: none !important;
+  }
+}
+@layer utilities {
+  .absolute {
+    position: absolute;
+  }
+  .fixed {
+    position: fixed;
+  }
+  .relative {
+    position: relative;
+  }
+  .inset-0 {
+    inset: calc(var(--spacing) * 0);
+  }
+  .top-2 {
+    top: calc(var(--spacing) * 2);
+  }
+  .right-2 {
+    right: calc(var(--spacing) * 2);
+  }
+  .z-50 {
+    z-index: 50;
+  }
+  .my-0\.5 {
+    margin-block: calc(var(--spacing) * 0.5);
+  }
+  .my-1 {
+    margin-block: calc(var(--spacing) * 1);
+  }
+  .my-1\.5 {
+    margin-block: calc(var(--spacing) * 1.5);
+  }
+  .mb-0\.5 {
+    margin-bottom: calc(var(--spacing) * 0.5);
+  }
+  .mb-1 {
+    margin-bottom: calc(var(--spacing) * 1);
+  }
+  .mb-1\.5 {
+    margin-bottom: calc(var(--spacing) * 1.5);
+  }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-2\.5 {
+    margin-bottom: calc(var(--spacing) * 2.5);
+  }
+  .mb-3 {
+    margin-bottom: calc(var(--spacing) * 3);
+  }
+  .block {
+    display: block;
+  }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .hidden {
+    display: none;
+  }
+  .inline-block {
+    display: inline-block;
+  }
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
+  .h-4 {
+    height: calc(var(--spacing) * 4);
+  }
+  .h-12 {
+    height: calc(var(--spacing) * 12);
+  }
+  .h-44 {
+    height: calc(var(--spacing) * 44);
+  }
+  .h-\[175px\] {
+    height: 175px;
+  }
+  .h-full {
+    height: 100%;
+  }
+  .max-h-\[86vh\] {
+    max-height: 86vh;
+  }
+  .min-h-\[1\.6rem\] {
+    min-height: 1.6rem;
+  }
+  .min-h-\[1\.8rem\] {
+    min-height: 1.8rem;
+  }
+  .w-4 {
+    width: calc(var(--spacing) * 4);
+  }
+  .w-12 {
+    width: calc(var(--spacing) * 12);
+  }
+  .w-44 {
+    width: calc(var(--spacing) * 44);
+  }
+  .w-full {
+    width: 100%;
+  }
+  .max-w-\[90px\] {
+    max-width: 90px;
+  }
+  .max-w-\[100px\] {
+    max-width: 100px;
+  }
+  .max-w-\[270px\] {
+    max-width: 270px;
+  }
+  .max-w-\[280px\] {
+    max-width: 280px;
+  }
+  .max-w-lg {
+    max-width: var(--container-lg);
+  }
+  .max-w-sm {
+    max-width: var(--container-sm);
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  .flex-shrink-0 {
+    flex-shrink: 0;
+  }
+  .flex-grow {
+    flex-grow: 1;
+  }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .flex-row {
+    flex-direction: row;
+  }
+  .items-baseline {
+    align-items: baseline;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .justify-around {
+    justify-content: space-around;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .justify-start {
+    justify-content: flex-start;
+  }
+  .gap-1 {
+    gap: calc(var(--spacing) * 1);
+  }
+  .gap-1\.5 {
+    gap: calc(var(--spacing) * 1.5);
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .gap-2\.5 {
+    gap: calc(var(--spacing) * 2.5);
+  }
+  .space-y-1 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 1) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 1) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-2 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-2\.5 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 2.5) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 2.5) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-x-0\.5 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 0.5) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 0.5) * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
+  .space-x-1 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 1) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 1) * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
+  .space-x-1\.5 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 1.5) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 1.5) * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
+  .space-x-2 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 2) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
+  .truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .overflow-hidden {
+    overflow: hidden;
+  }
+  .overflow-y-auto {
+    overflow-y: auto;
+  }
+  .rounded-2xl {
+    border-radius: var(--radius-2xl);
+  }
+  .rounded-3xl {
+    border-radius: var(--radius-3xl);
+  }
+  .rounded-\[14px\] {
+    border-radius: 14px;
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
+  .rounded-xl {
+    border-radius: var(--radius-xl);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-2 {
+    border-style: var(--tw-border-style);
+    border-width: 2px;
+  }
+  .border-3 {
+    border-style: var(--tw-border-style);
+    border-width: 3px;
+  }
+  .border-4 {
+    border-style: var(--tw-border-style);
+    border-width: 4px;
+  }
+  .border-t {
+    border-top-style: var(--tw-border-style);
+    border-top-width: 1px;
+  }
+  .border-dashed {
+    --tw-border-style: dashed;
+    border-style: dashed;
+  }
+  .border-amber-200 {
+    border-color: var(--color-amber-200);
+  }
+  .border-amber-300 {
+    border-color: var(--color-amber-300);
+  }
+  .border-amber-400 {
+    border-color: var(--color-amber-400);
+  }
+  .border-amber-600 {
+    border-color: var(--color-amber-600);
+  }
+  .border-blue-300 {
+    border-color: var(--color-blue-300);
+  }
+  .border-blue-400 {
+    border-color: var(--color-blue-400);
+  }
+  .border-blue-700 {
+    border-color: var(--color-blue-700);
+  }
+  .border-cyan-300 {
+    border-color: var(--color-cyan-300);
+  }
+  .border-emerald-200 {
+    border-color: var(--color-emerald-200);
+  }
+  .border-emerald-300 {
+    border-color: var(--color-emerald-300);
+  }
+  .border-emerald-400 {
+    border-color: var(--color-emerald-400);
+  }
+  .border-emerald-500 {
+    border-color: var(--color-emerald-500);
+  }
+  .border-emerald-700 {
+    border-color: var(--color-emerald-700);
+  }
+  .border-emerald-800 {
+    border-color: var(--color-emerald-800);
+  }
+  .border-gray-300 {
+    border-color: var(--color-gray-300);
+  }
+  .border-indigo-400 {
+    border-color: var(--color-indigo-400);
+  }
+  .border-lime-300 {
+    border-color: var(--color-lime-300);
+  }
+  .border-orange-400 {
+    border-color: var(--color-orange-400);
+  }
+  .border-orange-600 {
+    border-color: var(--color-orange-600);
+  }
+  .border-purple-300 {
+    border-color: var(--color-purple-300);
+  }
+  .border-red-400 {
+    border-color: var(--color-red-400);
+  }
+  .border-red-700 {
+    border-color: var(--color-red-700);
+  }
+  .border-rose-300 {
+    border-color: var(--color-rose-300);
+  }
+  .border-rose-500 {
+    border-color: var(--color-rose-500);
+  }
+  .border-rose-600 {
+    border-color: var(--color-rose-600);
+  }
+  .border-rose-700 {
+    border-color: var(--color-rose-700);
+  }
+  .border-sky-300 {
+    border-color: var(--color-sky-300);
+  }
+  .border-sky-400 {
+    border-color: var(--color-sky-400);
+  }
+  .border-sky-700 {
+    border-color: var(--color-sky-700);
+  }
+  .border-teal-300 {
+    border-color: var(--color-teal-300);
+  }
+  .border-teal-400 {
+    border-color: var(--color-teal-400);
+  }
+  .bg-amber-50 {
+    background-color: var(--color-amber-50);
+  }
+  .bg-amber-50\/90 {
+    background-color: color-mix(in srgb, oklch(98.7% 0.022 95.277) 90%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-amber-50) 90%, transparent);
+    }
+  }
+  .bg-amber-100 {
+    background-color: var(--color-amber-100);
+  }
+  .bg-amber-100\/90 {
+    background-color: color-mix(in srgb, oklch(96.2% 0.059 95.617) 90%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-amber-100) 90%, transparent);
+    }
+  }
+  .bg-amber-200 {
+    background-color: var(--color-amber-200);
+  }
+  .bg-amber-400 {
+    background-color: var(--color-amber-400);
+  }
+  .bg-black\/60 {
+    background-color: color-mix(in srgb, #000 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-black) 60%, transparent);
+    }
+  }
+  .bg-blue-50\/90 {
+    background-color: color-mix(in srgb, oklch(97% 0.014 254.604) 90%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-blue-50) 90%, transparent);
+    }
+  }
+  .bg-blue-100 {
+    background-color: var(--color-blue-100);
+  }
+  .bg-blue-500 {
+    background-color: var(--color-blue-500);
+  }
+  .bg-cyan-50 {
+    background-color: var(--color-cyan-50);
+  }
+  .bg-cyan-50\/90 {
+    background-color: color-mix(in srgb, oklch(98.4% 0.019 200.873) 90%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-cyan-50) 90%, transparent);
+    }
+  }
+  .bg-emerald-50 {
+    background-color: var(--color-emerald-50);
+  }
+  .bg-emerald-50\/90 {
+    background-color: color-mix(in srgb, oklch(97.9% 0.021 166.113) 90%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-emerald-50) 90%, transparent);
+    }
+  }
+  .bg-emerald-100 {
+    background-color: var(--color-emerald-100);
+  }
+  .bg-emerald-200 {
+    background-color: var(--color-emerald-200);
+  }
+  .bg-emerald-500 {
+    background-color: var(--color-emerald-500);
+  }
+  .bg-emerald-600 {
+    background-color: var(--color-emerald-600);
+  }
+  .bg-gray-50 {
+    background-color: var(--color-gray-50);
+  }
+  .bg-gray-300 {
+    background-color: var(--color-gray-300);
+  }
+  .bg-indigo-50\/90 {
+    background-color: color-mix(in srgb, oklch(96.2% 0.018 272.314) 90%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-indigo-50) 90%, transparent);
+    }
+  }
+  .bg-lime-50 {
+    background-color: var(--color-lime-50);
+  }
+  .bg-lime-50\/90 {
+    background-color: color-mix(in srgb, oklch(98.6% 0.031 120.757) 90%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-lime-50) 90%, transparent);
+    }
+  }
+  .bg-orange-50\/90 {
+    background-color: color-mix(in srgb, oklch(98% 0.016 73.684) 90%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-orange-50) 90%, transparent);
+    }
+  }
+  .bg-orange-200 {
+    background-color: var(--color-orange-200);
+  }
+  .bg-purple-50\/90 {
+    background-color: color-mix(in srgb, oklch(97.7% 0.014 308.299) 90%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-purple-50) 90%, transparent);
+    }
+  }
+  .bg-purple-100 {
+    background-color: var(--color-purple-100);
+  }
+  .bg-red-200 {
+    background-color: var(--color-red-200);
+  }
+  .bg-red-500 {
+    background-color: var(--color-red-500);
+  }
+  .bg-rose-50 {
+    background-color: var(--color-rose-50);
+  }
+  .bg-rose-50\/90 {
+    background-color: color-mix(in srgb, oklch(96.9% 0.015 12.422) 90%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-rose-50) 90%, transparent);
+    }
+  }
+  .bg-rose-100 {
+    background-color: var(--color-rose-100);
+  }
+  .bg-rose-500 {
+    background-color: var(--color-rose-500);
+  }
+  .bg-sky-50 {
+    background-color: var(--color-sky-50);
+  }
+  .bg-sky-200 {
+    background-color: var(--color-sky-200);
+  }
+  .bg-slate-900 {
+    background-color: var(--color-slate-900);
+  }
+  .bg-teal-50 {
+    background-color: var(--color-teal-50);
+  }
+  .bg-teal-50\/90 {
+    background-color: color-mix(in srgb, oklch(98.4% 0.014 180.72) 90%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-teal-50) 90%, transparent);
+    }
+  }
+  .bg-white {
+    background-color: var(--color-white);
+  }
+  .bg-white\/95 {
+    background-color: color-mix(in srgb, #fff 95%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-white) 95%, transparent);
+    }
+  }
+  .bg-gradient-to-b {
+    --tw-gradient-position: to bottom in oklab;
+    background-image: linear-gradient(var(--tw-gradient-stops));
+  }
+  .bg-gradient-to-br {
+    --tw-gradient-position: to bottom right in oklab;
+    background-image: linear-gradient(var(--tw-gradient-stops));
+  }
+  .bg-gradient-to-r {
+    --tw-gradient-position: to right in oklab;
+    background-image: linear-gradient(var(--tw-gradient-stops));
+  }
+  .from-amber-50 {
+    --tw-gradient-from: var(--color-amber-50);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .from-amber-300 {
+    --tw-gradient-from: var(--color-amber-300);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .from-amber-400 {
+    --tw-gradient-from: var(--color-amber-400);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .from-emerald-600 {
+    --tw-gradient-from: var(--color-emerald-600);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .from-orange-500 {
+    --tw-gradient-from: var(--color-orange-500);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .from-purple-50 {
+    --tw-gradient-from: var(--color-purple-50);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .from-rose-500 {
+    --tw-gradient-from: var(--color-rose-500);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .from-sky-50 {
+    --tw-gradient-from: var(--color-sky-50);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .from-sky-500 {
+    --tw-gradient-from: var(--color-sky-500);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .via-amber-400 {
+    --tw-gradient-via: var(--color-amber-400);
+    --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-via-stops);
+  }
+  .via-yellow-300 {
+    --tw-gradient-via: var(--color-yellow-300);
+    --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-via-stops);
+  }
+  .to-amber-50 {
+    --tw-gradient-to: var(--color-amber-50);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .to-amber-500 {
+    --tw-gradient-to: var(--color-amber-500);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .to-blue-600 {
+    --tw-gradient-to: var(--color-blue-600);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .to-indigo-50 {
+    --tw-gradient-to: var(--color-indigo-50);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .to-orange-50 {
+    --tw-gradient-to: var(--color-orange-50);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .to-red-500 {
+    --tw-gradient-to: var(--color-red-500);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .to-teal-600 {
+    --tw-gradient-to: var(--color-teal-600);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .to-yellow-50 {
+    --tw-gradient-to: var(--color-yellow-50);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .to-yellow-400 {
+    --tw-gradient-to: var(--color-yellow-400);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .object-contain {
+    object-fit: contain;
+  }
+  .p-0\.5 {
+    padding: calc(var(--spacing) * 0.5);
+  }
+  .p-1 {
+    padding: calc(var(--spacing) * 1);
+  }
+  .p-1\.5 {
+    padding: calc(var(--spacing) * 1.5);
+  }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
+  }
+  .p-2\.5 {
+    padding: calc(var(--spacing) * 2.5);
+  }
+  .p-3 {
+    padding: calc(var(--spacing) * 3);
+  }
+  .p-3\.5 {
+    padding: calc(var(--spacing) * 3.5);
+  }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
+  }
+  .px-1 {
+    padding-inline: calc(var(--spacing) * 1);
+  }
+  .px-1\.5 {
+    padding-inline: calc(var(--spacing) * 1.5);
+  }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
+  .px-2\.5 {
+    padding-inline: calc(var(--spacing) * 2.5);
+  }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .py-0\.5 {
+    padding-block: calc(var(--spacing) * 0.5);
+  }
+  .py-1 {
+    padding-block: calc(var(--spacing) * 1);
+  }
+  .py-1\.5 {
+    padding-block: calc(var(--spacing) * 1.5);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
+  .py-2\.5 {
+    padding-block: calc(var(--spacing) * 2.5);
+  }
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
+  }
+  .pt-1 {
+    padding-top: calc(var(--spacing) * 1);
+  }
+  .pt-1\.5 {
+    padding-top: calc(var(--spacing) * 1.5);
+  }
+  .pb-2 {
+    padding-bottom: calc(var(--spacing) * 2);
+  }
+  .pb-3 {
+    padding-bottom: calc(var(--spacing) * 3);
+  }
+  .pb-4 {
+    padding-bottom: calc(var(--spacing) * 4);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-left {
+    text-align: left;
+  }
+  .text-right {
+    text-align: right;
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
+  .text-5xl {
+    font-size: var(--text-5xl);
+    line-height: var(--tw-leading, var(--text-5xl--line-height));
+  }
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+  }
+  .text-\[12px\] {
+    font-size: 12px;
+  }
+  .leading-none {
+    --tw-leading: 1;
+    line-height: 1;
+  }
+  .leading-tight {
+    --tw-leading: var(--leading-tight);
+    line-height: var(--leading-tight);
+  }
+  .font-black {
+    --tw-font-weight: var(--font-weight-black);
+    font-weight: var(--font-weight-black);
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .font-extrabold {
+    --tw-font-weight: var(--font-weight-extrabold);
+    font-weight: var(--font-weight-extrabold);
+  }
+  .tracking-wide {
+    --tw-tracking: var(--tracking-wide);
+    letter-spacing: var(--tracking-wide);
+  }
+  .tracking-wider {
+    --tw-tracking: var(--tracking-wider);
+    letter-spacing: var(--tracking-wider);
+  }
+  .tracking-widest {
+    --tw-tracking: var(--tracking-widest);
+    letter-spacing: var(--tracking-widest);
+  }
+  .text-amber-700 {
+    color: var(--color-amber-700);
+  }
+  .text-amber-800 {
+    color: var(--color-amber-800);
+  }
+  .text-amber-900 {
+    color: var(--color-amber-900);
+  }
+  .text-amber-950 {
+    color: var(--color-amber-950);
+  }
+  .text-blue-600 {
+    color: var(--color-blue-600);
+  }
+  .text-blue-800 {
+    color: var(--color-blue-800);
+  }
+  .text-blue-950 {
+    color: var(--color-blue-950);
+  }
+  .text-emerald-600 {
+    color: var(--color-emerald-600);
+  }
+  .text-emerald-700 {
+    color: var(--color-emerald-700);
+  }
+  .text-emerald-900 {
+    color: var(--color-emerald-900);
+  }
+  .text-gray-500 {
+    color: var(--color-gray-500);
+  }
+  .text-gray-600 {
+    color: var(--color-gray-600);
+  }
+  .text-gray-700 {
+    color: var(--color-gray-700);
+  }
+  .text-gray-800 {
+    color: var(--color-gray-800);
+  }
+  .text-lime-950 {
+    color: var(--color-lime-950);
+  }
+  .text-orange-600 {
+    color: var(--color-orange-600);
+  }
+  .text-orange-800 {
+    color: var(--color-orange-800);
+  }
+  .text-purple-950 {
+    color: var(--color-purple-950);
+  }
+  .text-red-600 {
+    color: var(--color-red-600);
+  }
+  .text-rose-600 {
+    color: var(--color-rose-600);
+  }
+  .text-rose-700 {
+    color: var(--color-rose-700);
+  }
+  .text-rose-800 {
+    color: var(--color-rose-800);
+  }
+  .text-rose-900 {
+    color: var(--color-rose-900);
+  }
+  .text-sky-800 {
+    color: var(--color-sky-800);
+  }
+  .text-sky-900 {
+    color: var(--color-sky-900);
+  }
+  .text-sky-950 {
+    color: var(--color-sky-950);
+  }
+  .text-teal-900 {
+    color: var(--color-teal-900);
+  }
+  .text-white {
+    color: var(--color-white);
+  }
+  .opacity-60 {
+    opacity: 60%;
+  }
+  .shadow {
+    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-2xl {
+    --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-inner {
+    --tw-shadow: inset 0 2px 4px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.05));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-lg {
+    --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-md {
+    --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-xl {
+    --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-xs {
+    --tw-shadow: 0 1px 2px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.05));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .drop-shadow {
+    --tw-drop-shadow-size: drop-shadow(0 1px 2px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.1))) drop-shadow(0 1px 1px var(--tw-drop-shadow-color, rgb(0 0 0 / 0.06)));
+    --tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow( 0 1px 1px rgb(0 0 0 / 0.06));
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
+  .filter {
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
+  .backdrop-blur-md {
+    --tw-backdrop-blur: blur(var(--blur-md));
+    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  }
+  .backdrop-blur-xs {
+    --tw-backdrop-blur: blur(var(--blur-xs));
+    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  }
+  .hover\:bg-amber-50 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-amber-50);
+      }
+    }
+  }
+  .hover\:bg-amber-100 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-amber-100);
+      }
+    }
+  }
+  .hover\:bg-cyan-50 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-cyan-50);
+      }
+    }
+  }
+  .hover\:bg-gray-100 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-gray-100);
+      }
+    }
+  }
+  .hover\:bg-lime-50 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-lime-50);
+      }
+    }
+  }
+  .hover\:bg-purple-50 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-purple-50);
+      }
+    }
+  }
+  .hover\:bg-rose-100 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-rose-100);
+      }
+    }
+  }
+  .hover\:bg-sky-100 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-sky-100);
+      }
+    }
+  }
+  .hover\:from-amber-400 {
+    &:hover {
+      @media (hover: hover) {
+        --tw-gradient-from: var(--color-amber-400);
+        --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+      }
+    }
+  }
+  .hover\:text-gray-800 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-gray-800);
+      }
+    }
+  }
+  .focus\:border-sky-500 {
+    &:focus {
+      border-color: var(--color-sky-500);
+    }
+  }
+  .focus\:outline-none {
+    &:focus {
+      --tw-outline-style: none;
+      outline-style: none;
+    }
+  }
+  .sm\:h-52 {
+    @media (width >= 40rem) {
+      height: calc(var(--spacing) * 52);
+    }
+  }
+  .sm\:max-h-\[88vh\] {
+    @media (width >= 40rem) {
+      max-height: 88vh;
+    }
+  }
+  .sm\:w-52 {
+    @media (width >= 40rem) {
+      width: calc(var(--spacing) * 52);
+    }
+  }
+  .sm\:p-3 {
+    @media (width >= 40rem) {
+      padding: calc(var(--spacing) * 3);
+    }
+  }
+  .sm\:p-4 {
+    @media (width >= 40rem) {
+      padding: calc(var(--spacing) * 4);
+    }
+  }
+  .sm\:text-2xl {
+    @media (width >= 40rem) {
+      font-size: var(--text-2xl);
+      line-height: var(--tw-leading, var(--text-2xl--line-height));
+    }
+  }
+  .sm\:text-3xl {
+    @media (width >= 40rem) {
+      font-size: var(--text-3xl);
+      line-height: var(--tw-leading, var(--text-3xl--line-height));
+    }
+  }
+  .sm\:text-4xl {
+    @media (width >= 40rem) {
+      font-size: var(--text-4xl);
+      line-height: var(--tw-leading, var(--text-4xl--line-height));
+    }
+  }
+  .sm\:text-base {
+    @media (width >= 40rem) {
+      font-size: var(--text-base);
+      line-height: var(--tw-leading, var(--text-base--line-height));
+    }
+  }
+  .sm\:text-lg {
+    @media (width >= 40rem) {
+      font-size: var(--text-lg);
+      line-height: var(--tw-leading, var(--text-lg--line-height));
+    }
+  }
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-space-x-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-gradient-position {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-via {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-to {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-via-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@property --tw-gradient-via-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+@property --tw-gradient-to-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-blur {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-brightness {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-contrast {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-grayscale {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-hue-rotate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-invert {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-opacity {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-saturate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-sepia {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-drop-shadow-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-blur {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-brightness {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-contrast {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-grayscale {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-hue-rotate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-invert {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-opacity {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-saturate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-sepia {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-space-y-reverse: 0;
+      --tw-space-x-reverse: 0;
+      --tw-border-style: solid;
+      --tw-gradient-position: initial;
+      --tw-gradient-from: #0000;
+      --tw-gradient-via: #0000;
+      --tw-gradient-to: #0000;
+      --tw-gradient-stops: initial;
+      --tw-gradient-via-stops: initial;
+      --tw-gradient-from-position: 0%;
+      --tw-gradient-via-position: 50%;
+      --tw-gradient-to-position: 100%;
+      --tw-leading: initial;
+      --tw-font-weight: initial;
+      --tw-tracking: initial;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-blur: initial;
+      --tw-brightness: initial;
+      --tw-contrast: initial;
+      --tw-grayscale: initial;
+      --tw-hue-rotate: initial;
+      --tw-invert: initial;
+      --tw-opacity: initial;
+      --tw-saturate: initial;
+      --tw-sepia: initial;
+      --tw-drop-shadow: initial;
+      --tw-drop-shadow-color: initial;
+      --tw-drop-shadow-alpha: 100%;
+      --tw-drop-shadow-size: initial;
+      --tw-backdrop-blur: initial;
+      --tw-backdrop-brightness: initial;
+      --tw-backdrop-contrast: initial;
+      --tw-backdrop-grayscale: initial;
+      --tw-backdrop-hue-rotate: initial;
+      --tw-backdrop-invert: initial;
+      --tw-backdrop-opacity: initial;
+      --tw-backdrop-saturate: initial;
+      --tw-backdrop-sepia: initial;
+    }
+  }
+}
+
+</style>
+    <!-- 日本語丸ゴシック系のOS標準フォントを使用 -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            background: linear-gradient(145deg, #eff8f5 0%, #fff8ea 54%, #f7f0ff 100%);
+            color: #1F2937;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            min-height: 100vh;
+            min-height: 100dvh;
+            overflow-x: hidden;
+            overflow-y: auto; /* 端末画面サイズに応じて自然に上下スクロール可能に */
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* 押しやすい立体ボタン */
+        .btn-3d {
+            transition: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 0 rgba(0, 0, 0, 0.12), 0 6px 12px rgba(0, 0, 0, 0.05);
+        }
+        .btn-3d:active {
+            transform: translateY(3px);
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.04);
+        }
+
+        /* メニューカードデザイン */
+        .menu-card {
+            transition: all 0.15s ease-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.03);
+        }
+        .menu-card:active {
+            transform: scale(0.96);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        /* 濃い枠線（視認性向上） */
+        .border-bold-orange { border: 2.5px solid #EA580C !important; }
+        .border-bold-emerald { border: 2.5px solid #059669 !important; }
+        .border-bold-blue { border: 2.5px solid #2563EB !important; }
+        .border-bold-amber { border: 2.5px solid #D97706 !important; }
+        .border-bold-indigo { border: 2.5px solid #4F46E5 !important; }
+        .border-bold-rose { border: 2.5px solid #E11D48 !important; }
+        .border-bold-teal { border: 2.5px solid #0D9488 !important; }
+        .border-bold-purple { border: 2.5px solid #9333EA !important; }
+        .border-bold-cyan { border: 2.5px solid #0891B2 !important; }
+        .border-bold-lime { border: 2.5px solid #65A30D !important; }
+
+        /* ゲームタイル */
+        .game-tile {
+            transition: transform 0.12s ease-out, background-color 0.15s;
+            box-shadow: inset 0 -3px 0 rgba(0,0,0,0.1), 0 4px 10px rgba(0,0,0,0.06);
+        }
+        .game-tile:active {
+            transform: scale(0.94);
+        }
+
+        /* アニメーション */
+        @keyframes popIn {
+            0% { transform: scale(0.6); opacity: 0; }
+            80% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .animate-pop {
+            animation: popIn 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        @keyframes stampDrop {
+            0% { transform: scale(3) rotate(-20deg); opacity: 0; }
+            70% { transform: scale(0.9) rotate(5deg); opacity: 0.9; }
+            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
+        .stamp-animate {
+            animation: stampDrop 0.35s cubic-bezier(0.2, 0.8, 0.2, 1.2) forwards;
+        }
+
+        @keyframes pulseSuccess {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.06); }
+        }
+        .effect-success {
+            animation: pulseSuccess 0.25s ease-in-out;
+        }
+
+        /* 文字特大モードクラス */
+        body.large-font .text-xs { font-size: 0.85rem !important; }
+        body.large-font .text-sm { font-size: 1.05rem !important; }
+        body.large-font .text-base { font-size: 1.2rem !important; }
+        body.large-font .text-\[9px\] { font-size: 11px !important; }
+        body.large-font .text-\[10px\] { font-size: 12px !important; }
+        body.large-font .text-\[11px\] { font-size: 13px !important; }
+    </style>
+<style>
+  :root { --ink:#18324d; --leaf:#368a75; }
+  body { color:var(--ink); }
+  header { border-color:#b7e0d3 !important; box-shadow:0 7px 24px rgba(44,93,80,.10) !important; }
+  #homeScreen,#gameScreen,#resultScreen { border-color:#b7e0d3 !important; box-shadow:0 16px 35px rgba(45,87,85,.09) !important; }
+  .owl-greeting { background:#eaf7f1; border:2px solid #b9e4d0; border-radius:16px; padding:12px; margin-bottom:10px; font-weight:800; font-size:14px; color:#205e4e; }
+  .menu-card { border-width:2px !important; box-shadow:0 5px 10px rgba(31,83,65,.08) !important; }
+  .menu-card h3 { font-size:15px !important; }
+  .menu-card p { font-size:11px !important; white-space:normal; }
+  button:focus-visible, .menu-card:focus-visible { outline:3px solid #20756a; outline-offset:3px; }
+  @media(min-width:700px) { main,header { max-width:720px !important; } #homeScreen .grid-cols-2 { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  @media(prefers-reduced-motion:reduce) { .animate-pop,.stamp-animate,.effect-success { animation:none !important; } }
+</style>
+<style id="test-ui-v11">
+  body { font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", system-ui, sans-serif; }
+  .game-menu-card { display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:153px;padding:9px 6px;border-radius:18px;cursor:pointer;text-align:center;color:#18324d;transition:transform .14s,box-shadow .14s;box-shadow:0 4px 14px rgba(25,60,52,.08); }
+  .game-menu-card:active { transform:scale(.97); }
+  .game-card-art { display:block;width:92px;height:80px;object-fit:contain;border-radius:14px; }
+  .game-card-title {display:block;font-size:15px;font-weight:900;line-height:1.28;white-space:normal;}
+  .game-card-desc {display:block;color:#48605e;font-size:11px;line-height:1.3;}
+  .game-menu-card:focus-visible {outline:3px solid #28796f;outline-offset:3px;}
+  /* ご利用案内: キーボード・タップの両方に対応する開閉パネル */
+  .usage-accordion {margin-bottom:12px;border:2px solid #b7dfcb;border-radius:16px;background:#f1faf4;overflow:hidden;box-shadow:0 2px 5px rgba(28,72,50,.05);}
+  .usage-accordion summary {display:flex;align-items:center;gap:10px;min-height:50px;padding:9px 12px;list-style:none;cursor:pointer;color:#215c49;font-size:14px;font-weight:900;touch-action:manipulation;}
+  .usage-accordion summary::-webkit-details-marker {display:none;}
+  .usage-accordion summary:focus-visible {outline:3px solid #21866b;outline-offset:-3px;border-radius:12px;}
+  .usage-accordion .usage-door {display:inline-flex;align-items:center;justify-content:center;flex:0 0 32px;width:32px;height:32px;background:#d3efe1;border-radius:10px;font-size:19px;transition:transform .22s ease;}
+  .usage-accordion[open] .usage-door {transform:rotate(-12deg);}
+  .usage-accordion .usage-name {flex:1;line-height:1.35;}
+  .usage-accordion .usage-open,.usage-accordion .usage-close {font-size:12px;color:#296c55;white-space:nowrap;}
+  .usage-accordion .usage-close {display:none;}
+  .usage-accordion[open] .usage-open {display:none;}
+  .usage-accordion[open] .usage-close {display:inline;}
+  .usage-accordion .usage-arrow {font-size:22px;line-height:1;color:#296c55;transition:transform .2s ease;}
+  .usage-accordion[open] .usage-arrow {transform:rotate(180deg);}
+  .usage-accordion .usage-panel {padding:1px 14px 13px 14px;border-top:1px dashed #a6d5be;background:#f7fdf9;animation:usageDoorOpen .24s ease-out;}
+  .usage-accordion .usage-panel p {color:#254b3e;font-size:13px;line-height:1.7;font-weight:700;margin:11px 0 0;}
+  @keyframes usageDoorOpen {from{opacity:0;transform:translateY(-9px)}to{opacity:1;transform:translateY(0)}}
+  @media(prefers-reduced-motion:reduce){.usage-accordion .usage-door,.usage-accordion .usage-arrow{transition:none}.usage-accordion .usage-panel{animation:none}}
+
+  .game-tile,button { touch-action:manipulation; }
+  header { width:100%;max-width:720px;display:flex;flex-direction:column;align-items:stretch;gap:8px;padding:9px 12px !important; }
+  header > div:first-child { width:100%;min-width:0; }
+  header > div:first-child > div { min-width:0;flex:1; }
+  header h1 { flex-wrap:wrap;gap:5px; }
+  header #headerSubtitle { white-space:normal;line-height:1.4; }
+  header > div:last-child { width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:8px; }
+  header > div:last-child button {min-height:36px;justify-content:center;white-space:nowrap;padding:6px 2px !important;font-size:12px !important; }
+  #homeScreen { max-height:none !important;overflow:visible !important; }
+  #homeScreen > .grid { flex-grow:0; }
+  #appBody main { max-width:720px; }
+  @media(max-width:370px){ header > div:last-child { column-gap:5px; } }
+
+  #gameBoard button {min-height:46px;}
+  #profileModal input { font-size:16px !important; }
+  @media(min-width:700px){.game-menu-card{min-height:166px}.game-card-art{width:108px;height:90px}.game-card-title{font-size:16px}}
+  @media(max-width:370px){.game-card-art{width:82px;height:72px}.game-card-title{font-size:14px}.game-menu-card{min-height:147px}}
+  @media(prefers-reduced-motion:reduce){.game-menu-card{transition:none}}
+
+  /* v1.3: ホームではカード一覧だけをスクロール。ゲーム画面は従来どおり。 */
+  body.home-mode {
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+    padding-bottom: max(8px, env(safe-area-inset-bottom));
+  }
+  body.home-mode > header { flex: 0 0 auto; }
+  body.home-mode > main {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+    padding-bottom: 0;
+  }
+  body.home-mode #homeScreen {
+    height: 100%;
+    max-height: none !important;
+    min-height: 0;
+    overflow: hidden !important;
+  }
+  #gameCardScroll.game-list-scroll {
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    padding: 4px 5px 14px 2px;
+    scrollbar-width: thin;
+    scrollbar-color: #92bcae #eaf5ef;
+    border-radius: 13px;
+  }
+  #gameCardScroll::-webkit-scrollbar { width: 7px; }
+  #gameCardScroll::-webkit-scrollbar-thumb { background: #92bcae; border-radius: 12px; }
+  #gameCardScroll::-webkit-scrollbar-track { background: #eaf5ef; border-radius: 12px; }
+  #gameCardScroll:focus-visible { outline: 3px solid #27765f; outline-offset: -3px; }
+  #gameCardGrid { width: 100%; padding-bottom: 4px; }
+  /* 画面の縦幅を節約。ゲーム選択は十分大きいタップ領域を確保。 */
+  @media (max-width: 619px) {
+    .game-menu-card { min-height: 123px; padding: 7px 4px; gap: 3px; }
+    .game-card-art { width: 82px; height: 70px; }
+    .game-card-title { font-size: 14px; }
+    .game-card-desc { font-size: 10px; }
+  }
+  /* タブレットでは3列にして、縦スクロール量をさらに軽減。 */
+  @media (min-width: 620px) {
+    #homeScreen #gameCardGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .game-menu-card { min-height: 156px; }
+  }
+  @media (max-height: 650px) and (min-width: 620px) {
+    .game-menu-card { min-height: 124px; }
+    .game-card-art { height: 65px; width: 79px; }
+  }
+  /* 極端に低い画面や横向きでは、上部設定が隠れないよう全体スクロールを許可。 */
+  @media (max-height: 520px) {
+    body.home-mode { height: auto; min-height: 100dvh; overflow-y: auto; }
+    body.home-mode > main { min-height: 0; overflow: visible; }
+    body.home-mode #homeScreen { height: auto; overflow: visible !important; }
+    #gameCardScroll.game-list-scroll { flex: 0 0 auto; height: min(55dvh, 300px); min-height: 160px; }
+  }
+  /* スワイプをブラウザに渡し、カードはクリックで確実に起動。 */
+  #gameCardScroll .game-menu-card { touch-action: pan-y; }
+</style>
+</head>
+<body id="appBody" class="home-mode w-full flex flex-col justify-between items-center p-2 sm:p-3">
+
+    <!-- ヘッダーエリア -->
+    <header class="w-full max-w-lg bg-white/95 backdrop-blur-md border-2 border-emerald-200 rounded-2xl px-2.5 py-1.5 shadow-md flex justify-between items-center flex-shrink-0 mb-1">
+        <div class="flex items-center space-x-1.5">
+            <img src="assets/owl.png" alt="フクロウ" class="w-12 h-12 object-contain" />
+            <div>
+                <h1 class="text-sm sm:text-base font-black text-amber-950 leading-tight flex items-center gap-1">
+                    <span>やさしい脳活日和</span>
+                    <span id="headerUserBadge" class="bg-amber-200 text-amber-900 text-[12px] px-1.5 py-0.2 rounded-full border border-amber-400 font-extrabold truncate max-w-[90px]">ゲスト様</span>
+                </h1>
+                <p id="headerSubtitle" class="text-[12px] text-amber-700 font-bold truncate">フクロウといっしょに楽しくチャレンジ！</p>
+            </div>
+        </div>
+        <div class="flex items-center space-x-1">
+            <!-- ユーザー登録・プロフィールボタン -->
+            <button onclick="openProfileModal()" class="btn-3d bg-sky-50 hover:bg-sky-100 border-2 border-sky-400 text-sky-900 px-2 py-1 rounded-xl font-black text-[12px] flex items-center space-x-0.5">
+                <span>👤</span>
+                <span id="profileBtnText">設定</span>
+            </button>
+            <!-- 文字特大トグル -->
+            <button id="fontToggleBtn" onclick="toggleLargeFont()" class="btn-3d bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-900 px-2 py-1 rounded-xl font-black text-[12px] flex items-center space-x-1">
+                <span>🔍</span>
+                <span id="fontBtnText">文字大</span>
+            </button>
+            <!-- スタンプ帳ボタン -->
+            <button onclick="openStampModal()" class="btn-3d bg-rose-50 hover:bg-rose-100 border border-rose-300 text-rose-800 px-2 py-1 rounded-xl font-black text-[12px] flex items-center space-x-0.5">
+                <span>💮</span>
+                <span>手帳</span>
+            </button>
+            <!-- 音量切り替え -->
+            <button id="soundToggleBtn" onclick="toggleSound()" class="btn-3d bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-900 px-2 py-1 rounded-xl font-black text-[12px] flex items-center space-x-0.5">
+                <span id="soundIcon">🔊</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ領域（端末の高さに合わせて伸縮し、画面下部のカードが見切れないよう余白とスクロールを確保） -->
+    <main class="w-full max-w-lg flex-grow flex flex-col justify-start items-center relative pb-3">
+
+        <!-- 1. フクロウのホーム画面（機種によって縦幅が足りない時は上下にスムーズに動く） -->
+        <section id="homeScreen" class="w-full bg-white/95 backdrop-blur-md border-2 border-emerald-200 rounded-3xl p-3 sm:p-4 shadow-xl flex flex-col justify-start overflow-y-auto max-h-[86vh] sm:max-h-[88vh]">
+            
+            <!-- ① おまかせゲーム開始 -->
+            <button onclick="quickStartRandomGame()" class="btn-3d w-full bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-400 hover:from-amber-400 text-amber-950 font-black py-2.5 px-3 rounded-2xl border-2 border-amber-600 text-sm sm:text-base flex items-center justify-center space-x-1.5 shadow flex-shrink-0 mb-2">
+                <span class="text-sm">▶</span>
+                <span id="quickStartBannerText">今日のおすすめを遊ぶ</span>
+            </button>
+
+            <!-- ② 難易度（スピード）選択 -->
+            <div class="bg-gradient-to-br from-amber-50 to-orange-50 px-3 py-2 rounded-xl border border-amber-300 flex-shrink-0 mb-2.5">
+                <div class="flex items-center justify-between mb-1">
+                    <span class="text-[12px] font-extrabold text-amber-900">⚡ スピード設定</span>
+                    <span class="text-[12px] text-amber-700 font-bold" id="currentDiffLabel">設定：ゆっくり</span>
+                </div>
+                <div class="grid grid-cols-3 gap-1.5">
+                    <button onclick="setDifficulty('slow')" id="diff-slow" class="diff-btn btn-3d bg-emerald-600 text-white py-1.5 px-1 rounded-lg font-black text-[12px] border border-emerald-800 flex items-center justify-center">
+                        <span>🐢 ゆっくり</span>
+                    </button>
+                    <button onclick="setDifficulty('normal')" id="diff-normal" class="diff-btn btn-3d bg-white text-gray-700 py-1.5 px-1 rounded-lg font-black text-[12px] border border-gray-300 flex items-center justify-center">
+                        <span>🚶 ふつう</span>
+                    </button>
+                    <button onclick="setDifficulty('fast')" id="diff-fast" class="diff-btn btn-3d bg-white text-gray-700 py-1.5 px-1 rounded-lg font-black text-[12px] border border-gray-300 flex items-center justify-center">
+                        <span>🏃 はやい</span>
+                    </button>
+                </div>
+            </div>
+
+            <p class="owl-greeting">🦉 「きょうは何に挑戦する？ ゆっくりでも大丈夫！」</p>
+            <!-- 通常は閉じておき、タップで扉のように開くご利用案内（JavaScript不要） -->
+            <details class="usage-accordion" id="usageAccordion">
+                <summary>
+                    <span class="usage-door" aria-hidden="true">🚪</span>
+                    <span class="usage-name">ご利用案内・音と保存について</span>
+                    <span class="usage-open" aria-hidden="true">開く</span>
+                    <span class="usage-close" aria-hidden="true">閉じる</span>
+                    <span class="usage-arrow" aria-hidden="true">⌄</span>
+                </summary>
+                <div class="usage-panel">
+                    <p>🔊 正解・不正解時に効果音が鳴ります。画面右上の 🔊 で切り替えられます。音量は端末でも調整できます。</p>
+                    <p>🔒 ログイン不要・成績の外部送信はありません。ニックネーム・年齢は任意で、入力した場合はこの端末のブラウザに保存されます。</p>
+                </div>
+            </details>
+            <!-- ③ メニュー見出し -->
+            <div class="flex items-center justify-between px-1 flex-shrink-0 mb-2">
+                <div class="flex items-center space-x-1">
+                    <span class="text-sm">🦉</span>
+                    <h2 class="text-sm sm:text-base font-black text-amber-950 tracking-wide">
+                        フクロウと楽しむ10の脳活ゲーム
+                    </h2>
+                </div>
+                <span class="text-[12px] text-amber-800 font-bold">↕ スクロール</span>
+            </div>
+
+            <!-- ④ ゲーム一覧だけを上下スクロール。ボタンは独立してタップ可能 -->
+            <div id="gameCardScroll" class="game-list-scroll" role="region" aria-label="10種類の脳活ゲーム。上下にスクロールして選べます" tabindex="0">
+              <div id="gameCardGrid" class="grid grid-cols-2 gap-2.5">
+                
+                <!-- 1: 笑顔タッチ -->
+                <button type="button" onclick="startGame('whack')" class="menu-card game-menu-card bg-orange-50/90 border-bold-orange" aria-label="笑顔タッチを始める">
+                    <img class="game-card-art" src="assets/whack.webp" alt="" loading="lazy" width="120" height="98">
+                    <span class="game-card-title">笑顔タッチ</span>
+                    <span class="game-card-desc">反射と判断</span>
+                </button>
+
+                <!-- 2: 信号キャッチ -->
+                <button type="button" onclick="startGame('signal')" class="menu-card game-menu-card bg-emerald-50/90 border-bold-emerald" aria-label="信号キャッチを始める">
+                    <img class="game-card-art" src="assets/signal.webp" alt="" loading="lazy" width="120" height="98">
+                    <span class="game-card-title">信号キャッチ</span>
+                    <span class="game-card-desc">色の変化に反応</span>
+                </button>
+
+                <!-- 3: 数字順番タッチ -->
+                <button type="button" onclick="startGame('numbers')" class="menu-card game-menu-card bg-blue-50/90 border-bold-blue" aria-label="数字順番タッチを始める">
+                    <img class="game-card-art" src="assets/numbers.webp" alt="" loading="lazy" width="120" height="98">
+                    <span class="game-card-title">数字順番タッチ</span>
+                    <span class="game-card-desc">数字を見つけよう</span>
+                </button>
+
+                <!-- 4: スピード計算 -->
+                <button type="button" onclick="startGame('calc')" class="menu-card game-menu-card bg-amber-50/90 border-bold-amber" aria-label="スピード計算を始める">
+                    <img class="game-card-art" src="assets/calc.webp" alt="" loading="lazy" width="120" height="98">
+                    <span class="game-card-title">スピード計算</span>
+                    <span class="game-card-desc">暗算に挑戦</span>
+                </button>
+
+                <!-- 5: 宇宙パトロール -->
+                <button type="button" onclick="startGame('invader')" class="menu-card game-menu-card bg-indigo-50/90 border-bold-indigo" aria-label="宇宙パトロールを始める">
+                    <img class="game-card-art" src="assets/invader.webp" alt="" loading="lazy" width="120" height="98">
+                    <span class="game-card-title">宇宙パトロール</span>
+                    <span class="game-card-desc">宇宙でチャレンジ</span>
+                </button>
+
+                <!-- 6: 神経衰弱 -->
+                <button type="button" onclick="startGame('memory')" class="menu-card game-menu-card bg-rose-50/90 border-bold-rose" aria-label="神経衰弱を始める">
+                    <img class="game-card-art" src="assets/memory.webp" alt="" loading="lazy" width="120" height="98">
+                    <span class="game-card-title">神経衰弱</span>
+                    <span class="game-card-desc">ペアを覚えよう</span>
+                </button>
+
+                <!-- 7: 後出しジャンケン -->
+                <button type="button" onclick="startGame('janken')" class="menu-card game-menu-card bg-teal-50/90 border-bold-teal" aria-label="後出しジャンケンを始める">
+                    <img class="game-card-art" src="assets/janken.webp" alt="" loading="lazy" width="120" height="98">
+                    <span class="game-card-title">後出しジャンケン</span>
+                    <span class="game-card-desc">指示どおりの手</span>
+                </button>
+
+                <!-- 8: 名前の順番記憶 -->
+                <button type="button" onclick="startGame('nameOrder')" class="menu-card game-menu-card bg-purple-50/90 border-bold-purple" aria-label="名前の順番記憶を始める">
+                    <img class="game-card-art" src="assets/nameOrder.webp" alt="" loading="lazy" width="120" height="98">
+                    <span class="game-card-title">名前の順番記憶</span>
+                    <span class="game-card-desc">順番を覚えよう</span>
+                </button>
+
+                <!-- 9: 色当て（ストループ効果） -->
+                <button type="button" onclick="startGame('stroop')" class="menu-card game-menu-card bg-cyan-50/90 border-bold-cyan" aria-label="色当てテストを始める">
+                    <img class="game-card-art" src="assets/stroop.webp" alt="" loading="lazy" width="120" height="98">
+                    <span class="game-card-title">色当てテスト</span>
+                    <span class="game-card-desc">文字の色を見分ける</span>
+                </button>
+
+                <!-- 10: なかまはずれ探し -->
+                <button type="button" onclick="startGame('oddOne')" class="menu-card game-menu-card bg-lime-50/90 border-bold-lime" aria-label="なかまはずれを始める">
+                    <img class="game-card-art" src="assets/oddOne.webp" alt="" loading="lazy" width="120" height="98">
+                    <span class="game-card-title">なかまはずれ</span>
+                    <span class="game-card-desc">違うものを探そう</span>
+                </button>
+
+              </div>
+            </div>
+        </section>
+
+        <!-- 2. ゲームプレイ画面（機種によって縦幅にゆとりを持ち、上下スクロール可能に） -->
+        <section id="gameScreen" class="hidden w-full bg-white/95 backdrop-blur-md border-2 border-emerald-200 rounded-3xl p-3 sm:p-4 shadow-xl flex-col justify-start overflow-y-auto max-h-[86vh] sm:max-h-[88vh]">
+            
+            <!-- 上部ステータスバー -->
+            <div class="flex justify-between items-center bg-gradient-to-r from-amber-50 to-orange-50 px-3 py-1.5 rounded-2xl border border-amber-200 flex-shrink-0 mb-1.5">
+                <button onclick="returnToHome()" class="btn-3d bg-white hover:bg-gray-100 text-gray-800 font-black py-1 px-2.5 rounded-xl border border-gray-300 text-[12px] flex items-center space-x-1">
+                    <span>🔙</span><span>戻る</span>
+                </button>
+                
+                <div id="statusCenter" class="text-center">
+                    <span id="statusLabel" class="text-[12px] font-bold text-gray-500 block leading-tight">のこり時間</span>
+                    <span id="statusValue" class="text-sm sm:text-base font-black text-amber-950 leading-tight">30秒</span>
+                </div>
+
+                <div id="scoreBox" class="text-right bg-white px-2.5 py-1 rounded-xl border border-amber-300 shadow-xs">
+                    <span id="scoreLabel" class="text-[12px] font-bold text-gray-500 block leading-tight">得点</span>
+                    <span id="scoreValue" class="text-sm sm:text-base font-black text-orange-600 leading-tight">0</span>
+                </div>
+            </div>
+
+            <!-- ガイドメッセージ -->
+            <div id="gameMessage" class="text-center text-sm sm:text-base font-black text-gray-800 my-1.5 min-h-[1.8rem] flex items-center justify-center px-2 flex-shrink-0">
+                準備はいいですか？
+            </div>
+
+            <!-- ゲームボード領域（機種に応じて無理なく収まり、必要なら指先でスクロール可能） -->
+            <div id="gameBoard" class="w-full flex-grow flex items-center justify-center my-1 pb-3">
+                <!-- JSで動的に生成 -->
+            </div>
+
+        </section>
+
+        <!-- 3. 結果発表画面 -->
+        <section id="resultScreen" class="hidden w-full bg-white/95 backdrop-blur-md border-2 border-emerald-300 rounded-3xl p-3 sm:p-4 shadow-xl flex-col items-center justify-start text-center animate-pop overflow-y-auto max-h-[86vh] sm:max-h-[88vh]">
+            <div class="flex items-center space-x-2 pt-1 mb-2">
+                <span class="text-3xl filter drop-shadow" id="resultEmoji">🎉</span>
+                <h2 class="text-sm sm:text-base font-black text-amber-900" id="resultTitle">おつかれさまでした！</h2>
+            </div>
+            
+            <!-- ゲームの達成カード（医学的な年齢推定表示は行わない） -->
+            <div class="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 p-0.5 rounded-2xl w-full max-w-sm shadow-md mb-2.5">
+                <div class="bg-white rounded-[14px] p-2.5 flex items-center justify-around">
+                    <div class="text-left">
+                        <span class="text-[12px] font-black text-amber-800 block" id="resultUserGreeting">本日のチャレンジ</span>
+                        <span class="text-xs font-black text-amber-950">🦉 今日もよくがんばりました！</span>
+                    </div>
+                    <div class="flex items-baseline space-x-1">
+                        <span id="brainAgeNumber" class="text-3xl font-black text-rose-600 leading-none">42</span>
+                        <span class="text-xs font-black text-rose-900">ポイント</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- スコア結果詳細 -->
+            <div class="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-2xl p-3 w-full max-w-sm shadow-inner mb-3">
+                <div class="flex justify-between items-center">
+                    <p class="text-[12px] font-bold text-gray-600" id="resultScoreLabel">今回の記録</p>
+                    <span id="resultAgeDiffBadge" class="hidden text-[12px] font-black bg-rose-100 text-rose-700 border border-rose-300 px-1.5 py-0.2 rounded-full">自分の記録を楽しもう</span>
+                </div>
+                <p class="text-xl sm:text-2xl font-black text-orange-600 my-1" id="resultScoreValue">100点</p>
+                <div class="border-t border-amber-200 pt-1.5">
+                    <p class="text-xs font-bold text-emerald-900 leading-tight" id="resultComment">
+                        素晴らしい集中力です！次の挑戦も楽しみですね！
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex flex-row gap-2 w-full max-w-sm pb-2">
+                <button onclick="retryGame()" class="btn-3d flex-1 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-black text-xs py-2 px-2 rounded-xl border border-orange-600 flex items-center justify-center space-x-1">
+                    <span>🔄</span><span>もう一度</span>
+                </button>
+                <button onclick="openStampModal()" class="btn-3d flex-1 bg-gradient-to-r from-rose-500 to-red-500 text-white font-black text-xs py-2 px-2 rounded-xl border border-rose-600 flex items-center justify-center space-x-1">
+                    <span>💮</span><span>スタンプ押す</span>
+                </button>
+                <button onclick="returnToHome()" class="btn-3d flex-1 bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-black text-xs py-2 px-2 rounded-xl border border-emerald-700 flex items-center justify-center space-x-1">
+                    <span>🏠</span><span>メニュー</span>
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- まいにちスタンプ帳モーダル -->
+    <div id="stampModal" class="fixed inset-0 bg-black/60 backdrop-blur-xs hidden items-center justify-center p-3 z-50">
+        <div class="bg-gradient-to-b from-amber-50 to-yellow-50 border-4 border-amber-300 rounded-3xl p-3 w-full max-w-sm shadow-2xl flex flex-col items-center animate-pop relative">
+            <button onclick="closeStampModal()" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-xl font-black px-2 py-0.5">✕</button>
+            <div class="text-center mb-1.5">
+                <div class="text-2xl">💮</div>
+                <h3 class="text-sm font-black text-amber-950">まいにち脳活スタンプ帳</h3>
+                <p class="text-[12px] text-amber-700" id="stampUserSubtext">1日1回運動してスタンプを集めよう！</p>
+            </div>
+
+            <!-- ラジオ体操風 7マスカード -->
+            <div class="bg-white border-2 border-amber-200 rounded-2xl p-2.5 w-full grid grid-cols-4 gap-1.5 shadow-inner mb-2.5" id="stampGrid">
+                <!-- JSで7日分のマスを生成 -->
+            </div>
+
+            <div id="stampActionArea" class="w-full">
+                <button id="pressStampBtn" onclick="applyDailyStamp()" class="btn-3d w-full bg-gradient-to-r from-rose-500 to-red-500 text-white font-black py-2 rounded-xl border border-rose-700 text-xs shadow flex items-center justify-center space-x-1">
+                    <span>💮</span><span>本日のスタンプを押す！</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 👤 ユーザー登録（呼び名・年齢）モーダル -->
+    <div id="profileModal" class="fixed inset-0 bg-black/60 backdrop-blur-xs hidden items-center justify-center p-3 z-50">
+        <div class="bg-gradient-to-b from-sky-50 to-amber-50 border-4 border-sky-400 rounded-3xl p-4 w-full max-w-sm shadow-2xl flex flex-col items-center animate-pop relative">
+            <button onclick="closeProfileModal()" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-xl font-black px-2 py-0.5">✕</button>
+            
+            <div class="text-center mb-2.5">
+                <div class="text-3xl">👤</div>
+                <h3 class="text-sm sm:text-base font-black text-sky-950">ニックネームの設定</h3>
+                <p class="text-[12px] text-sky-800">ニックネームを設定できます。入力しなくても遊べます。</p>
+            </div>
+
+            <div class="w-full space-y-2.5 mb-3">
+                <!-- 呼び名入力 -->
+                <div>
+                    <label class="block text-[12px] font-black text-gray-700 mb-0.5" for="inputUserName">
+                        お名前（呼び名・ニックネーム）
+                    </label>
+                    <input type="text" id="inputUserName" maxlength="10" placeholder="例：ひろし さん、花子" 
+                        class="w-full px-3 py-2 bg-white rounded-xl border-2 border-sky-300 focus:border-sky-500 focus:outline-none text-sm sm:text-base font-bold text-gray-800 shadow-inner">
+                </div>
+
+                <!-- 年齢入力 -->
+                <div>
+                    <label class="block text-[12px] font-black text-gray-700 mb-0.5" for="inputUserAge">
+                        ご年齢（歳）
+                    </label>
+                    <div class="flex items-center space-x-2">
+                        <input type="number" id="inputUserAge" min="1" max="120" placeholder="例：72" 
+                            class="w-full px-3 py-2 bg-white rounded-xl border-2 border-sky-300 focus:border-sky-500 focus:outline-none text-sm sm:text-base font-bold text-gray-800 shadow-inner">
+                        <span class="text-xs font-black text-gray-700 flex-shrink-0">歳</span>
+                    </div>
+                    <span class="text-[12px] text-gray-500">※ニックネーム表示用です。年齢は入力しなくても遊べます。</span>
+                </div>
+            </div>
+
+            <div class="w-full flex space-x-2">
+                <button onclick="saveUserProfile()" class="btn-3d flex-1 bg-gradient-to-r from-sky-500 to-blue-600 text-white font-black py-2 rounded-xl border border-sky-700 text-xs shadow flex items-center justify-center space-x-1">
+                    <span>💾</span><span>保存する</span>
+                </button>
+                <button onclick="closeProfileModal()" class="btn-3d flex-1 bg-white hover:bg-gray-100 text-gray-700 font-black py-2 rounded-xl border border-gray-300 text-xs flex items-center justify-center">
+                    <span>閉じる</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript ロジック -->
+    <script>
+        /* ==========================================
+           0. ユーザー情報（呼び名・年齢）の管理
+        ========================================== */
+        let userProfile = {
+            name: '',
+            age: null
+        };
+
+        function initUserProfile() {
+            updateUserDisplay();
+        }
+
+        function openProfileModal() {
+            playSound('select');
+            document.getElementById('inputUserName').value = userProfile.name || '';
+            document.getElementById('inputUserAge').value = userProfile.age || '';
+            document.getElementById('profileModal').classList.remove('hidden');
+            document.getElementById('profileModal').classList.add('flex');
+        }
+
+        function closeProfileModal() {
+            playSound('select');
+            document.getElementById('profileModal').classList.add('hidden');
+            document.getElementById('profileModal').classList.remove('flex');
+        }
+
+        function saveUserProfile() {
+            playSound('good');
+            const nameInput = document.getElementById('inputUserName').value.trim();
+            const ageInput = parseInt(document.getElementById('inputUserAge').value, 10);
+
+            userProfile.name = nameInput || '';
+            userProfile.age = (!isNaN(ageInput) && ageInput > 0) ? ageInput : null;
+
+            try { localStorage.setItem('standalone-profile', JSON.stringify(userProfile)); } catch (_) {}
+            updateUserDisplay();
+            closeProfileModal();
+        }
+
+        function updateUserDisplay() {
+            const badge = document.getElementById('headerUserBadge');
+            const subtitle = document.getElementById('headerSubtitle');
+            const bannerText = document.getElementById('quickStartBannerText');
+            const stampSub = document.getElementById('stampUserSubtext');
+
+            if (userProfile.name) {
+                const displayName = userProfile.name.endsWith('さん') || userProfile.name.endsWith('様') ? userProfile.name : `${userProfile.name}さん`;
+                badge.textContent = displayName;
+                badge.className = "bg-sky-200 text-sky-900 text-[12px] px-1.5 py-0.2 rounded-full border border-sky-400 font-extrabold truncate max-w-[100px]";
+                subtitle.textContent = `${displayName}、今日も楽しく脳活！`;
+                bannerText.textContent = `${displayName}の脳活スタート（ランダムゲーム）`;
+                if (stampSub) stampSub.textContent = `${displayName}のまいにちの記録です！`;
+            } else {
+                badge.textContent = 'ゲスト様';
+                badge.className = "bg-amber-200 text-amber-900 text-[12px] px-1.5 py-0.2 rounded-full border border-amber-400 font-extrabold truncate max-w-[90px]";
+                subtitle.textContent = 'フクロウといっしょに楽しくチャレンジ！';
+                bannerText.textContent = '今日のおすすめを遊ぶ';
+                if (stampSub) stampSub.textContent = '1日1回運動してスタンプを集めよう！';
+            }
+        }
+
+        /* ==========================================
+           1. 音声エフェクト（Web Audio API・拍手/歓声追加）
+        ========================================== */
+        let soundEnabled = true;
+        let audioCtx = null;
+
+        function initAudio() {
+            if (!audioCtx) {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                audioCtx = new AudioContext();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+        }
+
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            const icon = document.getElementById('soundIcon');
+            if (soundEnabled) {
+                initAudio();
+                playSound('select');
+                icon.textContent = '🔊';
+            } else {
+                icon.textContent = '🔇';
+            }
+            saveStandaloneSettings();
+        }
+
+        function saveStandaloneSettings() {
+            try { localStorage.setItem('standalone-settings', JSON.stringify({sound:soundEnabled, largeFont:isLargeFont})); } catch (_) {}
+        }
+
+        // Web Audio による拍手（クラップ音）ノイズ合成
+        function playClappingSound() {
+            if (!soundEnabled) return;
+            try {
+                initAudio();
+                for (let i = 0; i < 6; i++) {
+                    runTimeout(() => {
+                        if (!audioCtx) return;
+                        const bufferSize = audioCtx.sampleRate * 0.08;
+                        const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+                        const output = buffer.getChannelData(0);
+                        for (let j = 0; j < bufferSize; j++) {
+                            output[j] = Math.random() * 2 - 1;
+                        }
+                        const whiteNoise = audioCtx.createBufferSource();
+                        whiteNoise.buffer = buffer;
+                        const filter = audioCtx.createBiquadFilter();
+                        filter.type = 'bandpass';
+                        filter.frequency.value = 1000 + Math.random() * 400;
+                        filter.Q.value = 2.5;
+
+                        const gain = audioCtx.createGain();
+                        gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+                        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
+
+                        whiteNoise.connect(filter);
+                        filter.connect(gain);
+                        gain.connect(audioCtx.destination);
+                        whiteNoise.start();
+                    }, i * 90 + Math.random() * 40);
+                }
+            } catch (e) {
+                console.error("Clap error", e);
+            }
+        }
+
+        function playSound(type) {
+            if (!soundEnabled) return;
+            try {
+                initAudio();
+                const now = audioCtx.currentTime;
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                if (type === 'good') {
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(523.25, now);
+                    osc.frequency.setValueAtTime(659.25, now + 0.08);
+                    gain.gain.setValueAtTime(0.2, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+                    osc.start(now);
+                    osc.stop(now + 0.3);
+                } else if (type === 'bad') {
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(180, now);
+                    osc.frequency.setValueAtTime(130, now + 0.12);
+                    gain.gain.setValueAtTime(0.2, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+                    osc.start(now);
+                    osc.stop(now + 0.3);
+                } else if (type === 'select') {
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(440, now);
+                    gain.gain.setValueAtTime(0.12, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+                    osc.start(now);
+                    osc.stop(now + 0.08);
+                } else if (type === 'signal') {
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(880, now);
+                    gain.gain.setValueAtTime(0.25, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
+                    osc.start(now);
+                    osc.stop(now + 0.2);
+                } else if (type === 'shoot') {
+                    osc.type = 'sawtooth';
+                    osc.frequency.setValueAtTime(750, now);
+                    osc.frequency.exponentialRampToValueAtTime(200, now + 0.1);
+                    gain.gain.setValueAtTime(0.12, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+                    osc.start(now);
+                    osc.stop(now + 0.1);
+                } else if (type === 'stamp') {
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(240, now);
+                    osc.frequency.exponentialRampToValueAtTime(80, now + 0.15);
+                    gain.gain.setValueAtTime(0.3, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
+                    osc.start(now);
+                    osc.stop(now + 0.15);
+                } else if (type === 'fanfare') {
+                    const notes = [523.25, 659.25, 783.99, 1046.50];
+                    notes.forEach((freq, idx) => {
+                        const o = audioCtx.createOscillator();
+                        const g = audioCtx.createGain();
+                        o.connect(g);
+                        g.connect(audioCtx.destination);
+                        o.type = 'triangle';
+                        o.frequency.setValueAtTime(freq, now + idx * 0.1);
+                        g.gain.setValueAtTime(0.18, now + idx * 0.1);
+                        g.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.1 + 0.35);
+                        o.start(now + idx * 0.1);
+                        o.stop(now + idx * 0.1 + 0.35);
+                    });
+                    playClappingSound();
+                }
+            } catch (e) {
+                console.error("Audio error:", e);
+            }
+        }
+
+        /* ==========================================
+           2. 文字特大モード & スタンプ帳（端末保存）
+        ========================================== */
+        let isLargeFont = false;
+        function toggleLargeFont() {
+            playSound('select');
+            isLargeFont = !isLargeFont;
+            const body = document.getElementById('appBody');
+            const btnText = document.getElementById('fontBtnText');
+            if (isLargeFont) {
+                body.classList.add('large-font');
+                btnText.textContent = '標準';
+            } else {
+                body.classList.remove('large-font');
+                btnText.textContent = '文字大';
+            }
+            saveStandaloneSettings();
+        }
+
+        // スタンプ帳のメモリ保持
+        let stampCount = 1;
+        let todayStamped = false;
+
+        function openStampModal() {
+            playSound('select');
+            renderStampGrid();
+            document.getElementById('stampModal').classList.remove('hidden');
+            document.getElementById('stampModal').classList.add('flex');
+        }
+
+        function closeStampModal() {
+            playSound('select');
+            document.getElementById('stampModal').classList.add('hidden');
+            document.getElementById('stampModal').classList.remove('flex');
+        }
+
+        function renderStampGrid() {
+            const grid = document.getElementById('stampGrid');
+            grid.innerHTML = '';
+            const days = ['1日目', '2日目', '3日目', '4日目', '5日目', '6日目', '皆勤賞💮'];
+            for (let i = 0; i < 7; i++) {
+                const isStamped = i < stampCount;
+                const cell = document.createElement('div');
+                cell.className = `flex flex-col items-center justify-center p-1.5 rounded-xl border-2 aspect-square text-center ${isStamped ? 'bg-amber-100 border-amber-400' : 'bg-gray-50 border-dashed border-gray-300'}`;
+                cell.innerHTML = `
+                    <span class="text-[12px] font-black text-gray-600 mb-0.5">${days[i]}</span>
+                    <span class="text-xl ${isStamped ? 'stamp-animate text-rose-600' : 'text-gray-300'}">${isStamped ? '💮' : '◯'}</span>
+                `;
+                grid.appendChild(cell);
+            }
+            const btn = document.getElementById('pressStampBtn');
+            if (todayStamped) {
+                btn.disabled = true;
+                btn.className = 'w-full bg-gray-300 text-gray-600 font-black py-2 rounded-xl text-xs flex items-center justify-center space-x-1';
+                btn.innerHTML = '<span>✔️</span><span>本日分は押印済みです！</span>';
+            } else {
+                btn.disabled = false;
+                btn.className = 'btn-3d w-full bg-gradient-to-r from-rose-500 to-red-500 text-white font-black py-2 rounded-xl border border-rose-700 text-xs shadow flex items-center justify-center space-x-1';
+                btn.innerHTML = '<span>💮</span><span>本日のスタンプを押す！</span>';
+            }
+        }
+
+        function applyDailyStamp() {
+            if (todayStamped) return;
+            playSound('stamp');
+            playClappingSound();
+            stampCount = Math.min(7, stampCount + 1);
+            todayStamped = true;
+            try { localStorage.setItem('standalone-stamps', JSON.stringify({count:stampCount, date:new Date().toLocaleDateString('sv-SE')})); } catch (_) {}
+            renderStampGrid();
+        }
+
+        /* ==========================================
+           3. 難易度 & 画面状態管理
+        ========================================== */
+        let currentDifficulty = 'slow';
+        let currentMode = null;
+        let gameTimer = null;
+        let spawnTimer = null;
+        let isPlaying = false;
+
+        const difficultyConfig = {
+            slow: {
+                name: 'ゆっくり',
+                whackDuration: 1900,
+                whackInterval: 1300,
+                signalRounds: 3,
+                invaderAlienSpeed: 0.35,
+                invaderBombChance: 0.006,
+                memoryPairs: 4,
+                jankenTime: 3.5,
+                nameOrderTime: 3600,
+                stroopTime: 3.5,
+                oddRounds: 5
+            },
+            normal: {
+                name: 'ふつう',
+                whackDuration: 1300,
+                whackInterval: 950,
+                signalRounds: 5,
+                invaderAlienSpeed: 0.6,
+                invaderBombChance: 0.012,
+                memoryPairs: 6,
+                jankenTime: 2.5,
+                nameOrderTime: 2600,
+                stroopTime: 2.5,
+                oddRounds: 7
+            },
+            fast: {
+                name: 'はやい',
+                whackDuration: 900,
+                whackInterval: 650,
+                signalRounds: 5,
+                invaderAlienSpeed: 0.95,
+                invaderBombChance: 0.02,
+                memoryPairs: 8,
+                jankenTime: 1.8,
+                nameOrderTime: 1900,
+                stroopTime: 1.8,
+                oddRounds: 8
+            }
+        };
+
+        function setDifficulty(level) {
+            playSound('select');
+            currentDifficulty = level;
+            document.getElementById('currentDiffLabel').textContent = `設定：${difficultyConfig[level].name}`;
+            ['slow', 'normal', 'fast'].forEach(l => {
+                const btn = document.getElementById(`diff-${l}`);
+                if (l === level) {
+                    btn.className = "diff-btn btn-3d bg-emerald-600 text-white py-0.5 px-1 rounded-lg font-black text-[12px] border border-emerald-800 flex items-center justify-center";
+                } else {
+                    btn.className = "diff-btn btn-3d bg-white text-gray-700 py-0.5 px-1 rounded-lg font-black text-[12px] border border-gray-300 flex items-center justify-center";
+                }
+            });
+        }
+
+        function showScreen(screenId) {
+            // ホームだけ画面高を固定し、ゲーム一覧部分をスワイプで移動する
+            document.body.classList.toggle('home-mode', screenId === 'homeScreen');
+            ['homeScreen', 'gameScreen', 'resultScreen'].forEach(id => {
+                const el = document.getElementById(id);
+                if (id === screenId) {
+                    el.classList.remove('hidden');
+                    el.classList.add('flex');
+                } else {
+                    el.classList.add('hidden');
+                    el.classList.remove('flex');
+                }
+            });
+        }
+
+        const allGameTimeouts = new Set();
+        function runTimeout(callback, delay) {
+            const timerId = window.setTimeout(() => {
+                allGameTimeouts.delete(timerId);
+                callback();
+            }, delay);
+            allGameTimeouts.add(timerId);
+            return timerId;
+        }
+
+        function clearAllTimers() {
+            if (gameTimer) clearInterval(gameTimer);
+            if (spawnTimer) clearTimeout(spawnTimer);
+            allGameTimeouts.forEach(id => window.clearTimeout(id));
+            allGameTimeouts.clear();
+            gameTimer = null;
+            spawnTimer = null;
+        }
+
+        function returnToHome() {
+            playSound('select');
+            isPlaying = false;
+            clearAllTimers();
+            showScreen('homeScreen');
+        }
+
+        function retryGame() {
+            playSound('select');
+            if (currentMode) startGame(currentMode);
+        }
+
+        function quickStartRandomGame() {
+            playSound('select');
+            const modes = ['whack', 'signal', 'numbers', 'calc', 'invader', 'memory', 'janken', 'nameOrder', 'stroop', 'oddOne'];
+            const randomMode = modes[Math.floor(Math.random() * modes.length)];
+            startGame(randomMode);
+        }
+
+        function setMessage(text, colorClass = "text-gray-800") {
+            const msgEl = document.getElementById('gameMessage');
+            msgEl.textContent = text;
+            msgEl.className = `text-center text-sm sm:text-base font-black my-1 min-h-[1.6rem] flex items-center justify-center px-1 flex-shrink-0 ${colorClass}`;
+        }
+
+        function startGame(mode) {
+            playSound('select');
+            currentMode = mode;
+            isPlaying = true;
+            clearAllTimers();
+            showScreen('gameScreen');
+
+            if (mode === 'whack') initWhackGame();
+            else if (mode === 'signal') initSignalGame();
+            else if (mode === 'numbers') initNumbersGame();
+            else if (mode === 'calc') initCalcGame();
+            else if (mode === 'invader') initInvaderGame();
+            else if (mode === 'memory') initMemoryGame();
+            else if (mode === 'janken') initJankenGame();
+            else if (mode === 'nameOrder') initNameOrderGame();
+            else if (mode === 'stroop') initStroopGame();
+            else if (mode === 'oddOne') initOddOneGame();
+        }
+
+        /* ==========================================
+           モード1: 笑顔タッチ
+        ========================================== */
+        let whackScore = 0;
+        let whackTimeLeft = 30;
+        let whackGridState = Array(9).fill(null);
+
+        function initWhackGame() {
+            whackScore = 0;
+            whackTimeLeft = 30;
+            whackGridState = Array(9).fill(null);
+
+            document.getElementById('statusLabel').textContent = 'のこり時間';
+            document.getElementById('statusValue').textContent = `${whackTimeLeft}秒`;
+            document.getElementById('scoreBox').classList.remove('hidden');
+            document.getElementById('scoreLabel').textContent = '得点';
+            document.getElementById('scoreValue').textContent = '0点';
+            setMessage('「😊 笑顔」が出たらタッチ！怒り顔は我慢！', 'text-amber-900');
+
+            const board = document.getElementById('gameBoard');
+            board.innerHTML = '';
+            const grid = document.createElement('div');
+            grid.className = 'grid grid-cols-3 gap-2 w-full max-w-[270px] aspect-square';
+
+            for (let i = 0; i < 9; i++) {
+                const cell = document.createElement('button');
+                cell.id = `whack-cell-${i}`;
+                cell.className = 'game-tile bg-amber-100 border-2 border-amber-300 rounded-2xl flex flex-col items-center justify-center text-3xl sm:text-4xl h-full w-full focus:outline-none';
+                cell.onclick = () => handleWhackTap(i);
+                grid.appendChild(cell);
+            }
+            board.appendChild(grid);
+
+            gameTimer = setInterval(() => {
+                whackTimeLeft--;
+                document.getElementById('statusValue').textContent = `${whackTimeLeft}秒`;
+                if (whackTimeLeft <= 0) finishWhackGame();
+            }, 1000);
+
+            scheduleNextWhackSpawn();
+        }
+
+        function scheduleNextWhackSpawn() {
+            if (!isPlaying || currentMode !== 'whack') return;
+            const config = difficultyConfig[currentDifficulty];
+            spawnTimer = runTimeout(() => {
+                spawnWhackTarget();
+                scheduleNextWhackSpawn();
+            }, config.whackInterval);
+        }
+
+        function spawnWhackTarget() {
+            if (!isPlaying || currentMode !== 'whack') return;
+            const emptyIndices = [];
+            whackGridState.forEach((val, idx) => { if (val === null) emptyIndices.push(idx); });
+            if (emptyIndices.length === 0) return;
+
+            const randomIdx = emptyIndices[Math.floor(Math.random() * emptyIndices.length)];
+            const isSmile = Math.random() < 0.8;
+            const targetType = isSmile ? 'smile' : 'angry';
+
+            whackGridState[randomIdx] = targetType;
+            const cell = document.getElementById(`whack-cell-${randomIdx}`);
+            if (!cell) return;
+
+            if (isSmile) {
+                cell.innerHTML = '<span class="animate-pop">😊</span><span class="text-[12px] font-black text-orange-800">タッチ</span>';
+                cell.className = 'game-tile bg-orange-200 border-3 border-orange-400 rounded-2xl flex flex-col items-center justify-center text-3xl sm:text-4xl h-full w-full';
+            } else {
+                cell.innerHTML = '<span class="animate-pop">😠</span><span class="text-[12px] font-black text-blue-800">ダメ</span>';
+                cell.className = 'game-tile bg-blue-100 border-3 border-blue-300 rounded-2xl flex flex-col items-center justify-center text-3xl sm:text-4xl h-full w-full';
+            }
+
+            const duration = difficultyConfig[currentDifficulty].whackDuration;
+            runTimeout(() => {
+                if (whackGridState[randomIdx] === targetType) clearWhackCell(randomIdx);
+            }, duration);
+        }
+
+        function clearWhackCell(index) {
+            whackGridState[index] = null;
+            const cell = document.getElementById(`whack-cell-${index}`);
+            if (cell) {
+                cell.innerHTML = '';
+                cell.className = 'game-tile bg-amber-100 border-2 border-amber-300 rounded-2xl flex flex-col items-center justify-center text-3xl sm:text-4xl h-full w-full';
+            }
+        }
+
+        function handleWhackTap(index) {
+            if (!isPlaying || currentMode !== 'whack') return;
+            const state = whackGridState[index];
+            if (!state) return;
+            const cell = document.getElementById(`whack-cell-${index}`);
+
+            if (state === 'smile') {
+                playSound('good');
+                whackScore += 10;
+                document.getElementById('scoreValue').textContent = `${whackScore}点`;
+                setMessage('⭕ ナイスキャッチ！', 'text-emerald-700');
+                whackGridState[index] = 'hit';
+                cell.innerHTML = '<span class="text-lg font-black text-emerald-700">⭕+10</span>';
+                cell.className = 'game-tile bg-emerald-200 border-2 border-emerald-500 rounded-2xl flex flex-col items-center justify-center h-full w-full effect-success';
+                runTimeout(() => clearWhackCell(index), 220);
+            } else if (state === 'angry') {
+                playSound('bad');
+                whackScore = Math.max(0, whackScore - 5);
+                document.getElementById('scoreValue').textContent = `${whackScore}点`;
+                setMessage('💦 お手つき！怒り顔は押しません', 'text-red-600');
+                whackGridState[index] = 'hit';
+                cell.innerHTML = '<span class="text-lg font-black text-red-600">❌-5</span>';
+                cell.className = 'game-tile bg-red-200 border-2 border-red-400 rounded-2xl flex flex-col items-center justify-center h-full w-full';
+                runTimeout(() => clearWhackCell(index), 300);
+            }
+        }
+
+        function finishWhackGame() {
+            isPlaying = false;
+            clearAllTimers();
+            playSound('fanfare');
+            const points = calculateChallengePoints(whackScore, 150, 40);
+            let comment = whackScore >= 130 ? '驚きの反応スピード！すばらしい記録です！✨' : whackScore >= 70 ? 'とても良い反応スピードです！しっかり指先が動いています😊' : 'いい体操になりましたね！日々の積み重ねが力になります🌱';
+            showResultScreen('🎉', '笑顔タッチ 終了！', `獲得スコア`, `${whackScore} 点`, comment, points);
+        }
+
+        /* ==========================================
+           モード2: 信号キャッチ
+        ========================================== */
+        let signalRound = 1;
+        let signalTotalRounds = 5;
+        let signalTimes = [];
+        let signalState = 'idle';
+        let signalStartTime = 0;
+
+        function initSignalGame() {
+            signalRound = 1;
+            signalTotalRounds = difficultyConfig[currentDifficulty].signalRounds;
+            signalTimes = [];
+
+            document.getElementById('statusLabel').textContent = '回数';
+            document.getElementById('statusValue').textContent = `1 / ${signalTotalRounds} 回`;
+            document.getElementById('scoreBox').classList.remove('hidden');
+            document.getElementById('scoreLabel').textContent = '前回の秒数';
+            document.getElementById('scoreValue').textContent = '--- 秒';
+
+            const board = document.getElementById('gameBoard');
+            board.innerHTML = `
+                <button id="signalBtn" onclick="handleSignalTap()" class="btn-3d w-44 h-44 sm:w-52 sm:h-52 rounded-full border-4 flex flex-col items-center justify-center p-3 text-center focus:outline-none shadow-lg">
+                    <span id="signalIcon" class="text-5xl mb-1">🔴</span>
+                    <span id="signalText" class="text-base sm:text-lg font-black">準備中...</span>
+                </button>
+            `;
+            startSignalRound();
+        }
+
+        function startSignalRound() {
+            if (!isPlaying || currentMode !== 'signal') return;
+            clearAllTimers();
+            signalState = 'waiting';
+            document.getElementById('statusValue').textContent = `${signalRound} / ${signalTotalRounds} 回`;
+            setMessage('赤信号です。青になるまで待って...', 'text-red-700');
+
+            const btn = document.getElementById('signalBtn');
+            const icon = document.getElementById('signalIcon');
+            const text = document.getElementById('signalText');
+            btn.className = 'btn-3d w-44 h-44 sm:w-52 sm:h-52 rounded-full bg-red-500 border-4 border-red-700 text-white flex flex-col items-center justify-center p-3 text-center shadow-lg';
+            icon.textContent = '✋';
+            text.innerHTML = 'まだ待って...<br><span class="text-xs font-bold">(赤信号)</span>';
+
+            const waitTime = 1800 + Math.random() * 2400;
+            spawnTimer = runTimeout(() => {
+                if (!isPlaying || currentMode !== 'signal') return;
+                signalState = 'ready';
+                signalStartTime = performance.now();
+                playSound('signal');
+                setMessage('🟢 青になりました！今すぐタッチ！！', 'text-emerald-700');
+                btn.className = 'btn-3d w-44 h-44 sm:w-52 sm:h-52 rounded-full bg-emerald-500 border-4 border-emerald-700 text-white flex flex-col items-center justify-center p-3 text-center shadow-lg animate-pop';
+                icon.textContent = '👆';
+                text.innerHTML = '今すぐ<br>タッチ！';
+            }, waitTime);
+        }
+
+        function handleSignalTap() {
+            if (!isPlaying || currentMode !== 'signal') return;
+            if (signalState === 'waiting') {
+                clearAllTimers();
+                playSound('bad');
+                signalState = 'tooEarly';
+                setMessage('💦 まだ赤でした！もう一度いきましょう', 'text-orange-600');
+                const btn = document.getElementById('signalBtn');
+                const icon = document.getElementById('signalIcon');
+                const text = document.getElementById('signalText');
+                btn.className = 'btn-3d w-44 h-44 sm:w-52 sm:h-52 rounded-full bg-amber-400 border-4 border-amber-600 text-amber-950 flex flex-col items-center justify-center p-3 text-center shadow-lg';
+                icon.textContent = '😅';
+                text.innerHTML = 'お手つき！<br><span class="text-xs">少し待ってね</span>';
+                spawnTimer = runTimeout(() => startSignalRound(), 1400);
+            } else if (signalState === 'ready') {
+                const reactionMs = performance.now() - signalStartTime;
+                const reactionSec = (reactionMs / 1000).toFixed(2);
+                signalTimes.push(parseFloat(reactionSec));
+                playSound('good');
+                signalState = 'done';
+                document.getElementById('scoreValue').textContent = `${reactionSec} 秒`;
+                setMessage(`⭕ 反応時間：${reactionSec}秒！`, 'text-emerald-700');
+                const btn = document.getElementById('signalBtn');
+                const icon = document.getElementById('signalIcon');
+                const text = document.getElementById('signalText');
+                btn.className = 'btn-3d w-44 h-44 sm:w-52 sm:h-52 rounded-full bg-blue-500 border-4 border-blue-700 text-white flex flex-col items-center justify-center p-3 text-center shadow-lg effect-success';
+                icon.textContent = '🎉';
+                text.innerHTML = `${reactionSec}秒！<br><span class="text-xs">ナイス！</span>`;
+                spawnTimer = runTimeout(() => {
+                    if (signalRound < signalTotalRounds) {
+                        signalRound++;
+                        startSignalRound();
+                    } else {
+                        finishSignalGame();
+                    }
+                }, 1300);
+            }
+        }
+
+        function finishSignalGame() {
+            isPlaying = false;
+            clearAllTimers();
+            playSound('fanfare');
+            const sum = signalTimes.reduce((a, b) => a + b, 0);
+            const avg = signalTimes.length ? (sum / signalTimes.length).toFixed(2) : "0.00";
+            const points = Math.max(0, Math.min(100, Math.round(100 - (Number(avg) - 0.3) * 70)));
+            let comment = avg <= 0.45 ? 'すばらしい反応スピード！自己ベストを目指そう！🏆' : avg <= 0.70 ? '俊敏な反応です！よく集中できました😊' : '信号をしっかり見て安全に反応できました！🚥';
+            showResultScreen('🚥', '信号キャッチ 終了！', `平均反応スピード`, `平均 ${avg} 秒`, comment, points);
+        }
+
+        /* ==========================================
+           モード3: 数字順番タッチ
+        ========================================== */
+        let nextNumberToTap = 1;
+        let numbersStartTime = 0;
+        let numbersElapsed = 0;
+
+        function initNumbersGame() {
+            nextNumberToTap = 1;
+            numbersElapsed = 0;
+
+            document.getElementById('statusLabel').textContent = '探す数字';
+            document.getElementById('statusValue').textContent = '「 1 」';
+            document.getElementById('scoreBox').classList.remove('hidden');
+            document.getElementById('scoreLabel').textContent = '経過時間';
+            document.getElementById('scoreValue').textContent = '0.0 秒';
+            setMessage('「1」から順番に「9」までタッチ！', 'text-blue-900');
+
+            const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            for (let i = nums.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [nums[i], nums[j]] = [nums[j], nums[i]];
+            }
+
+            const board = document.getElementById('gameBoard');
+            board.innerHTML = '';
+            const grid = document.createElement('div');
+            grid.className = 'grid grid-cols-3 gap-2 w-full max-w-[270px] aspect-square';
+
+            nums.forEach(num => {
+                const btn = document.createElement('button');
+                btn.id = `num-btn-${num}`;
+                btn.className = 'btn-3d bg-white text-blue-950 border-3 border-blue-400 rounded-2xl flex items-center justify-center text-3xl font-black h-full w-full focus:outline-none';
+                btn.textContent = num;
+                btn.onclick = () => handleNumberTap(num);
+                grid.appendChild(btn);
+            });
+            board.appendChild(grid);
+
+            numbersStartTime = performance.now();
+            gameTimer = setInterval(() => {
+                numbersElapsed = ((performance.now() - numbersStartTime) / 1000).toFixed(1);
+                document.getElementById('scoreValue').textContent = `${numbersElapsed} 秒`;
+            }, 100);
+        }
+
+        function handleNumberTap(num) {
+            if (!isPlaying || currentMode !== 'numbers') return;
+            const btn = document.getElementById(`num-btn-${num}`);
+            if (!btn) return;
+
+            if (num === nextNumberToTap) {
+                playSound('good');
+                btn.disabled = true;
+                btn.className = 'bg-emerald-100 text-emerald-600 border-2 border-emerald-300 rounded-2xl flex items-center justify-center text-3xl font-black h-full w-full opacity-60';
+                btn.textContent = '⭕';
+
+                if (nextNumberToTap === 9) {
+                    finishNumbersGame();
+                } else {
+                    nextNumberToTap++;
+                    document.getElementById('statusValue').textContent = `「 ${nextNumberToTap} 」`;
+                    setMessage(`つぎは「 ${nextNumberToTap} 」をタッチ！`, 'text-emerald-700');
+                }
+            } else if (num > nextNumberToTap) {
+                playSound('bad');
+                setMessage(`💦 いま押すのは「 ${nextNumberToTap} 」ですよ`, 'text-red-600');
+            }
+        }
+
+        function finishNumbersGame() {
+            isPlaying = false;
+            clearAllTimers();
+            playSound('fanfare');
+            const finalTime = ((performance.now() - numbersStartTime) / 1000).toFixed(1);
+            const points = Math.max(0, Math.min(100, Math.round(100 - (Number(finalTime) - 6) * 4)));
+            let comment = finalTime <= 7.0 ? 'お見事！広い視野と素早い判断力をお持ちです！🌟' : finalTime <= 12.0 ? 'スムーズに数字を発見できました！いい脳トレです😊' : '最後まで集中して探し出せました！拍手！👏';
+            showResultScreen('🔢', '数字順番タッチ クリア！', 'かかったタイム', `${finalTime} 秒`, comment, points);
+        }
+
+        /* ==========================================
+           モード4: スピード計算
+        ========================================== */
+        let calcScore = 0;
+        let calcTimeLeft = 30;
+        let calcCorrectAns = 0;
+
+        function initCalcGame() {
+            calcScore = 0;
+            calcTimeLeft = 30;
+
+            document.getElementById('statusLabel').textContent = 'のこり時間';
+            document.getElementById('statusValue').textContent = `${calcTimeLeft}秒`;
+            document.getElementById('scoreBox').classList.remove('hidden');
+            document.getElementById('scoreLabel').textContent = '正解数';
+            document.getElementById('scoreValue').textContent = '0問';
+            setMessage('計算の正しい答えをタッチ！', 'text-amber-900');
+
+            const board = document.getElementById('gameBoard');
+            board.innerHTML = `
+                <div class="flex flex-col items-center w-full max-w-[270px] space-y-2">
+                    <div id="calcQuestionBox" class="bg-amber-100/90 border-2 border-amber-400 rounded-2xl py-2 px-3 w-full text-center shadow">
+                        <span id="calcFormula" class="text-2xl sm:text-3xl font-black text-amber-950 tracking-wider">3 + 5 = ?</span>
+                    </div>
+                    <div id="calcOptionsGrid" class="grid grid-cols-2 gap-2 w-full"></div>
+                </div>
+            `;
+
+            generateCalcQuestion();
+
+            gameTimer = setInterval(() => {
+                calcTimeLeft--;
+                document.getElementById('statusValue').textContent = `${calcTimeLeft}秒`;
+                if (calcTimeLeft <= 0) finishCalcGame();
+            }, 1000);
+        }
+
+        function generateCalcQuestion() {
+            if (!isPlaying || currentMode !== 'calc') return;
+
+            const isPlus = Math.random() < 0.6;
+            let n1, n2;
+
+            if (currentDifficulty === 'slow') {
+                if (isPlus) {
+                    n1 = Math.floor(Math.random() * 8) + 1;
+                    n2 = Math.floor(Math.random() * 8) + 1;
+                    calcCorrectAns = n1 + n2;
+                } else {
+                    n1 = Math.floor(Math.random() * 9) + 2;
+                    n2 = Math.floor(Math.random() * (n1 - 1)) + 1;
+                    calcCorrectAns = n1 - n2;
+                }
+            } else if (currentDifficulty === 'normal') {
+                if (isPlus) {
+                    n1 = Math.floor(Math.random() * 15) + 3;
+                    n2 = Math.floor(Math.random() * 15) + 2;
+                    calcCorrectAns = n1 + n2;
+                } else {
+                    n1 = Math.floor(Math.random() * 18) + 6;
+                    n2 = Math.floor(Math.random() * (n1 - 2)) + 2;
+                    calcCorrectAns = n1 - n2;
+                }
+            } else {
+                if (isPlus) {
+                    n1 = Math.floor(Math.random() * 25) + 8;
+                    n2 = Math.floor(Math.random() * 25) + 5;
+                    calcCorrectAns = n1 + n2;
+                } else {
+                    n1 = Math.floor(Math.random() * 35) + 12;
+                    n2 = Math.floor(Math.random() * (n1 - 5)) + 4;
+                    calcCorrectAns = n1 - n2;
+                }
+            }
+
+            document.getElementById('calcFormula').textContent = `${n1} ${isPlus ? '+' : '-'} ${n2} = ?`;
+
+            const options = new Set([calcCorrectAns]);
+            while (options.size < 4) {
+                const delta = (Math.floor(Math.random() * 5) + 1) * (Math.random() < 0.5 ? 1 : -1);
+                const candidate = calcCorrectAns + delta;
+                if (candidate >= 0 && candidate !== calcCorrectAns) {
+                    options.add(candidate);
+                }
+            }
+
+            const shuffledOptions = Array.from(options).sort(() => 0.5 - Math.random());
+            const grid = document.getElementById('calcOptionsGrid');
+            grid.innerHTML = shuffledOptions.map(val => `
+                <button onclick="handleCalcAnswer(${val})" class="btn-3d bg-white hover:bg-amber-50 border-2 border-amber-300 rounded-2xl py-2.5 flex items-center justify-center text-2xl font-black text-amber-950">
+                    ${val}
+                </button>
+            `).join('');
+        }
+
+        function handleCalcAnswer(val) {
+            if (!isPlaying || currentMode !== 'calc') return;
+
+            if (val === calcCorrectAns) {
+                playSound('good');
+                calcScore++;
+                document.getElementById('scoreValue').textContent = `${calcScore}問`;
+                setMessage('⭕ 正解！テンポが良いですね！', 'text-emerald-700');
+            } else {
+                playSound('bad');
+                setMessage(`❌ 正解は「${calcCorrectAns}」でした`, 'text-red-600');
+            }
+            generateCalcQuestion();
+        }
+
+        function finishCalcGame() {
+            isPlaying = false;
+            clearAllTimers();
+            playSound('fanfare');
+            const points = calculateChallengePoints(calcScore, 18, 5);
+            let comment = calcScore >= 14 ? 'お見事！計算のスピードと正確さが光っています！🏆' : calcScore >= 8 ? 'すらすら暗算できて素晴らしい脳トレになりました😊' : '最後まで集中して計算できましたね！拍手！🌱';
+            showResultScreen('🧮', 'スピード計算 終了！', `正解数（30秒間）`, `${calcScore} 問正解`, comment, points);
+        }
+
+        /* ==========================================
+           モード5: 宇宙パトロール（インベーダー風）
+        ========================================== */
+        let invCanvas = null;
+        let invCtx = null;
+        let invScore = 0;
+        let invWave = 1;
+        let invPlayerX = 135;
+        let invBullets = [];
+        let invAliens = [];
+        let invBombs = [];
+        let invUfo = null;
+        let invAlienDir = 1;
+        let invGameOverReason = '';
+
+        function initInvaderGame() {
+            invScore = 0;
+            invWave = 1;
+            invPlayerX = 135;
+            invBullets = [];
+            invBombs = [];
+            invUfo = null;
+            invGameOverReason = '';
+
+            document.getElementById('statusLabel').textContent = 'ステージ';
+            document.getElementById('statusValue').textContent = `第 ${invWave} 波`;
+            document.getElementById('scoreBox').classList.remove('hidden');
+            document.getElementById('scoreLabel').textContent = '得点';
+            document.getElementById('scoreValue').textContent = '0点';
+            setMessage('敵ビーム（⚡）や侵略に注意！当たると即終了！', 'text-indigo-900');
+
+            const board = document.getElementById('gameBoard');
+            board.innerHTML = `
+                <div class="flex flex-col items-center w-full max-w-[270px] space-y-1">
+                    <div class="relative w-full h-[175px] bg-slate-900 rounded-2xl border-2 border-indigo-400 overflow-hidden shadow">
+                        <canvas id="invaderCanvas" width="270" height="175" class="w-full h-full block"></canvas>
+                    </div>
+                    <div class="grid grid-cols-3 gap-1 w-full">
+                        <button onclick="moveInvaderPlayer(-1)" class="btn-3d bg-blue-500 text-white py-1.5 rounded-xl border border-blue-700 font-black flex flex-col items-center justify-center">
+                            <span class="text-lg">⬅️</span>
+                            <span class="text-[12px]">ひだり</span>
+                        </button>
+                        <button onclick="fireInvaderBullet()" class="btn-3d bg-rose-500 text-white py-1.5 rounded-xl border border-rose-700 font-black flex flex-col items-center justify-center">
+                            <span class="text-lg">🚀</span>
+                            <span class="text-[12px]">ビーム</span>
+                        </button>
+                        <button onclick="moveInvaderPlayer(1)" class="btn-3d bg-blue-500 text-white py-1.5 rounded-xl border border-blue-700 font-black flex flex-col items-center justify-center">
+                            <span class="text-lg">➡️</span>
+                            <span class="text-[12px]">みぎ</span>
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            invCanvas = document.getElementById('invaderCanvas');
+            invCtx = invCanvas.getContext('2d');
+            spawnInvaderWave();
+
+            gameTimer = setInterval(() => {
+                updateInvaderGame();
+                drawInvaderGame();
+            }, 33);
+        }
+
+        function spawnInvaderWave() {
+            invAliens = [];
+            invAlienDir = 1;
+            const emojis = ['👾', '🐙', '👽', '🦀'];
+            const points = [40, 30, 20, 10];
+            const cols = Math.min(5, 3 + Math.floor(invWave / 2));
+            const rows = Math.min(3, 2 + Math.floor((invWave - 1) / 2));
+            const spacingX = Math.min(46, Math.floor(210 / cols));
+            const spacingY = 25;
+            const startX = (270 - (cols - 1) * spacingX) / 2;
+
+            for (let r = 0; r < rows; r++) {
+                for (let c = 0; c < cols; c++) {
+                    invAliens.push({
+                        x: startX + c * spacingX,
+                        y: 26 + r * spacingY,
+                        emoji: emojis[r % emojis.length],
+                        pts: points[r % points.length],
+                        alive: true
+                    });
+                }
+            }
+        }
+
+        function moveInvaderPlayer(dir) {
+            if (!isPlaying || currentMode !== 'invader') return;
+            invPlayerX += dir * 24;
+            if (invPlayerX < 20) invPlayerX = 20;
+            if (invPlayerX > 250) invPlayerX = 250;
+            drawInvaderGame();
+        }
+
+        function fireInvaderBullet() {
+            if (!isPlaying || currentMode !== 'invader') return;
+            if (invBullets.length >= 2) return;
+            playSound('shoot');
+            invBullets.push({ x: invPlayerX, y: 145 });
+        }
+
+        function updateInvaderGame() {
+            if (!isPlaying || currentMode !== 'invader') return;
+            const config = difficultyConfig[currentDifficulty];
+
+            for (let i = invBullets.length - 1; i >= 0; i--) {
+                invBullets[i].y -= 7;
+                if (invBullets[i].y < 0) invBullets.splice(i, 1);
+            }
+
+            if (!invUfo && Math.random() < 0.005) invUfo = { x: -20, y: 14 };
+            if (invUfo) {
+                invUfo.x += 1.8;
+                if (invUfo.x > 290) invUfo = null;
+            }
+
+            let hitWall = false;
+            const aliveAliens = invAliens.filter(a => a.alive);
+            const speedBoost = aliveAliens.length <= 2 ? 1.4 : 1.0;
+            const speed = config.invaderAlienSpeed * (1 + (invWave - 1) * 0.2) * speedBoost;
+
+            invAliens.forEach(a => {
+                if (!a.alive) return;
+                a.x += invAlienDir * speed;
+                if (a.x > 250 || a.x < 20) hitWall = true;
+            });
+
+            if (hitWall) {
+                invAlienDir *= -1;
+                let reachedBottom = false;
+                invAliens.forEach(a => {
+                    if (a.alive) {
+                        a.y += 12;
+                        if (a.y >= 140) reachedBottom = true;
+                    }
+                });
+                if (reachedBottom) {
+                    playSound('bad');
+                    invGameOverReason = '宇宙人に防衛ラインを突破されました！';
+                    finishInvaderGame();
+                    return;
+                }
+            }
+
+            for (let i = invBullets.length - 1; i >= 0; i--) {
+                const b = invBullets[i];
+                let hit = false;
+                if (invUfo && Math.abs(b.x - invUfo.x) < 18 && Math.abs(b.y - invUfo.y) < 14) {
+                    playSound('good');
+                    invScore += 50;
+                    document.getElementById('scoreValue').textContent = `${invScore}点`;
+                    invUfo = null;
+                    hit = true;
+                }
+                if (!hit) {
+                    for (let a of invAliens) {
+                        if (a.alive && Math.abs(b.x - a.x) < 16 && Math.abs(b.y - a.y) < 14) {
+                            a.alive = false;
+                            hit = true;
+                            playSound('good');
+                            invScore += a.pts;
+                            document.getElementById('scoreValue').textContent = `${invScore}点`;
+                            break;
+                        }
+                    }
+                }
+                if (hit) invBullets.splice(i, 1);
+            }
+
+            if (invAliens.every(a => !a.alive)) {
+                playSound('fanfare');
+                invWave++;
+                invScore += 50;
+                document.getElementById('statusValue').textContent = `第 ${invWave} 波`;
+                document.getElementById('scoreValue').textContent = `${invScore}点`;
+                setMessage(`🎉 第${invWave - 1}波クリア！`, 'text-indigo-700');
+                invBombs = [];
+                spawnInvaderWave();
+                return;
+            }
+
+            const maxBombs = Math.min(3, 2 + Math.floor((invWave - 1) / 2));
+            const bombChance = config.invaderBombChance * (1 + (invWave - 1) * 0.2);
+            if (aliveAliens.length > 0 && invBombs.length < maxBombs && Math.random() < bombChance) {
+                const shooter = aliveAliens[Math.floor(Math.random() * aliveAliens.length)];
+                invBombs.push({ x: shooter.x, y: shooter.y + 10 });
+            }
+
+            for (let i = invBombs.length - 1; i >= 0; i--) {
+                invBombs[i].y += 2.8 + (invWave - 1) * 0.2;
+                if (Math.abs(invBombs[i].x - invPlayerX) < 16 && Math.abs(invBombs[i].y - 156) < 14) {
+                    invBombs.splice(i, 1);
+                    playSound('bad');
+                    invGameOverReason = '敵のビーム（⚡）に当たってしまいました！';
+                    finishInvaderGame();
+                    return;
+                } else if (invBombs[i].y > 175) {
+                    invBombs.splice(i, 1);
+                }
+            }
+        }
+
+        function drawInvaderGame() {
+            if (!invCtx) return;
+            invCtx.fillStyle = '#0F172A';
+            invCtx.fillRect(0, 0, 270, 175);
+
+            invCtx.strokeStyle = '#EF4444';
+            invCtx.lineWidth = 1.5;
+            invCtx.setLineDash([4, 3]);
+            invCtx.beginPath();
+            invCtx.moveTo(6, 142);
+            invCtx.lineTo(264, 142);
+            invCtx.stroke();
+            invCtx.setLineDash([]);
+
+            invCtx.textAlign = 'center';
+            invCtx.textBaseline = 'middle';
+
+            if (invUfo) {
+                invCtx.font = '16px sans-serif';
+                invCtx.fillText('🛸', invUfo.x, invUfo.y);
+            }
+
+            invCtx.font = '16px sans-serif';
+            invAliens.forEach(a => {
+                if (a.alive) invCtx.fillText(a.emoji, a.x, a.y);
+            });
+
+            invCtx.fillStyle = '#FACC15';
+            invBullets.forEach(b => {
+                invCtx.beginPath();
+                invCtx.roundRect(b.x - 2.5, b.y - 6, 5, 12, 2);
+                invCtx.fill();
+            });
+
+            invCtx.font = '15px sans-serif';
+            invBombs.forEach(bomb => invCtx.fillText('⚡', bomb.x, bomb.y));
+
+            invCtx.font = '22px sans-serif';
+            invCtx.fillText('🚀', invPlayerX, 156);
+        }
+
+        function finishInvaderGame() {
+            isPlaying = false;
+            clearAllTimers();
+            playSound('fanfare');
+            const points = calculateChallengePoints(invScore, 350, 60);
+            let comment = invGameOverReason ? `【${invGameOverReason}】\n` : '';
+            comment += invScore >= 250 ? '宇宙パトロール隊長！素晴らしい目と手の連動です！🌟' : '素早く左右に回避できましたね！🚀';
+            showResultScreen('👾', '宇宙パトロール 終了！', `スコア（第${invWave}波まで到達）`, `${invScore} 点`, comment, points);
+        }
+
+        /* ==========================================
+           モード6: フルーツ神経衰弱
+        ========================================== */
+        let memoryCards = [];
+        let memoryFlipped = [];
+        let memoryMatchedCount = 0;
+        let memoryAttempts = 0;
+        let memoryLock = false;
+
+        function initMemoryGame() {
+            const pairs = difficultyConfig[currentDifficulty].memoryPairs;
+            memoryMatchedCount = 0;
+            memoryAttempts = 0;
+            memoryFlipped = [];
+            memoryLock = false;
+
+            document.getElementById('statusLabel').textContent = 'そろったペア';
+            document.getElementById('statusValue').textContent = `0 / ${pairs}`;
+            document.getElementById('scoreBox').classList.remove('hidden');
+            document.getElementById('scoreLabel').textContent = 'めくった回数';
+            document.getElementById('scoreValue').textContent = '0回';
+            setMessage('同じフルーツのカードを揃えよう！', 'text-rose-950');
+
+            const fruitPool = ['🍎', '🍌', '🍇', '🍊', '🍓', '🍉', '🍑', '🍍'];
+            const selectedFruits = fruitPool.slice(0, pairs);
+            let deck = [...selectedFruits, ...selectedFruits];
+            
+            for (let i = deck.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [deck[i], deck[j]] = [deck[j], deck[i]];
+            }
+
+            memoryCards = deck.map((fruit, idx) => ({ id: idx, fruit, isFlipped: false, isMatched: false }));
+
+            const board = document.getElementById('gameBoard');
+            board.innerHTML = '';
+            const grid = document.createElement('div');
+            grid.className = 'grid grid-cols-4 gap-2 w-full max-w-[270px]';
+
+            memoryCards.forEach((card, idx) => {
+                const btn = document.createElement('button');
+                btn.id = `mem-card-${idx}`;
+                btn.className = 'btn-3d bg-rose-100 border-2 border-rose-300 rounded-2xl flex items-center justify-center text-2xl aspect-square focus:outline-none';
+                btn.textContent = '❓';
+                btn.onclick = () => handleMemoryFlip(idx);
+                grid.appendChild(btn);
+            });
+            board.appendChild(grid);
+        }
+
+        function handleMemoryFlip(idx) {
+            if (!isPlaying || currentMode !== 'memory' || memoryLock) return;
+            const card = memoryCards[idx];
+            if (card.isFlipped || card.isMatched) return;
+
+            playSound('select');
+            card.isFlipped = true;
+            const btn = document.getElementById(`mem-card-${idx}`);
+            btn.textContent = card.fruit;
+            btn.className = 'btn-3d bg-white border-2 border-rose-500 rounded-2xl flex items-center justify-center text-2xl aspect-square animate-pop';
+
+            memoryFlipped.push(idx);
+
+            if (memoryFlipped.length === 2) {
+                memoryAttempts++;
+                document.getElementById('scoreValue').textContent = `${memoryAttempts}回`;
+                memoryLock = true;
+
+                const [firstIdx, secondIdx] = memoryFlipped;
+                const firstCard = memoryCards[firstIdx];
+                const secondCard = memoryCards[secondIdx];
+
+                if (firstCard.fruit === secondCard.fruit) {
+                    playSound('good');
+                    firstCard.isMatched = true;
+                    secondCard.isMatched = true;
+                    memoryMatchedCount++;
+                    document.getElementById('statusValue').textContent = `${memoryMatchedCount} / ${difficultyConfig[currentDifficulty].memoryPairs}`;
+                    memoryFlipped = [];
+                    memoryLock = false;
+
+                    const totalPairs = difficultyConfig[currentDifficulty].memoryPairs;
+                    if (memoryMatchedCount === totalPairs) {
+                        finishMemoryGame();
+                    } else {
+                        setMessage('⭕ ペア成立！素晴らしい記憶力！', 'text-emerald-700');
+                    }
+                } else {
+                    playSound('bad');
+                    setMessage('❌ 違いました。場所を覚えてね！', 'text-rose-600');
+                    runTimeout(() => {
+                        firstCard.isFlipped = false;
+                        secondCard.isFlipped = false;
+                        const btn1 = document.getElementById(`mem-card-${firstIdx}`);
+                        const btn2 = document.getElementById(`mem-card-${secondIdx}`);
+                        btn1.textContent = '❓';
+                        btn1.className = 'btn-3d bg-rose-100 border-2 border-rose-300 rounded-2xl flex items-center justify-center text-2xl aspect-square';
+                        btn2.textContent = '❓';
+                        btn2.className = 'btn-3d bg-rose-100 border-2 border-rose-300 rounded-2xl flex items-center justify-center text-2xl aspect-square';
+                        memoryFlipped = [];
+                        memoryLock = false;
+                    }, 750);
+                }
+            }
+        }
+
+        function finishMemoryGame() {
+            isPlaying = false;
+            clearAllTimers();
+            playSound('fanfare');
+            const targetPairs = difficultyConfig[currentDifficulty].memoryPairs;
+            const points = Math.max(0, Math.min(100, Math.round(100 - (memoryAttempts - targetPairs) * 8)));
+            let comment = memoryAttempts <= targetPairs * 1.4 ? '短期記憶力が抜群に冴えています！お見事です！🌟' : 'すべてのペアを揃えられました！素晴らしい記憶トレです😊';
+            showResultScreen('🍎', '神経衰弱 クリア！', `クリアまでのめくり回数`, `${memoryAttempts} 回`, comment, points);
+        }
+
+        /* ==========================================
+           モード7: 後出しジャンケン
+        ========================================== */
+        let jankenScore = 0;
+        let jankenRoundsLeft = 10;
+        let jankenCurrentTarget = {};
+        let jankenLocked = false;
+
+        function initJankenGame() {
+            jankenScore = 0;
+            jankenRoundsLeft = 10;
+
+            document.getElementById('statusLabel').textContent = 'のこり問題';
+            document.getElementById('statusValue').textContent = `${jankenRoundsLeft}問`;
+            document.getElementById('scoreBox').classList.remove('hidden');
+            document.getElementById('scoreLabel').textContent = '正解数';
+            document.getElementById('scoreValue').textContent = '0問';
+            setMessage('指示通りに「勝つ手」または「負ける手」を出そう！', 'text-teal-900');
+
+            const board = document.getElementById('gameBoard');
+            board.innerHTML = `
+                <div class="flex flex-col items-center w-full max-w-[270px] space-y-2">
+                    <div id="jankenPromptBox" class="bg-teal-50 border-2 border-teal-300 rounded-2xl p-2 w-full text-center shadow">
+                        <div id="jankenRuleText" class="text-sm font-black text-teal-900 mb-0.5">指示</div>
+                        <div id="jankenCpuHand" class="text-5xl my-1 animate-pop">✊</div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 w-full">
+                        <button onclick="handleJankenInput('✊')" class="btn-3d bg-white border-2 border-teal-400 rounded-2xl py-2 flex flex-col items-center justify-center text-3xl">
+                            <span>✊</span>
+                            <span class="text-[12px] font-bold text-teal-900">グー</span>
+                        </button>
+                        <button onclick="handleJankenInput('✌️')" class="btn-3d bg-white border-2 border-teal-400 rounded-2xl py-2 flex flex-col items-center justify-center text-3xl">
+                            <span>✌️</span>
+                            <span class="text-[12px] font-bold text-teal-900">チョキ</span>
+                        </button>
+                        <button onclick="handleJankenInput('🖐️')" class="btn-3d bg-white border-2 border-teal-400 rounded-2xl py-2 flex flex-col items-center justify-center text-3xl">
+                            <span>🖐️</span>
+                            <span class="text-[12px] font-bold text-teal-900">パー</span>
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            nextJankenRound();
+        }
+
+        function nextJankenRound() {
+            if (!isPlaying || currentMode !== 'janken') return;
+            jankenLocked = false;
+            if (jankenRoundsLeft <= 0) {
+                finishJankenGame();
+                return;
+            }
+
+            const hands = ['✊', '✌️', '🖐️'];
+            const cpuHand = hands[Math.floor(Math.random() * hands.length)];
+            const ruleType = Math.random() < 0.5 ? 'win' : 'lose';
+
+            jankenCurrentTarget = { cpuHand, ruleType };
+
+            document.getElementById('jankenCpuHand').textContent = cpuHand;
+            const ruleTextEl = document.getElementById('jankenRuleText');
+            if (ruleType === 'win') {
+                ruleTextEl.innerHTML = `この手に<span class="text-orange-600 font-black">【 勝つ手 】</span>を出せ！`;
+            } else {
+                ruleTextEl.innerHTML = `この手に<span class="text-blue-600 font-black">【 負ける手 】</span>を出せ！`;
+            }
+
+            const timeLimit = difficultyConfig[currentDifficulty].jankenTime * 1000;
+            if (gameTimer) clearTimeout(gameTimer);
+            gameTimer = runTimeout(() => {
+                if (!isPlaying || currentMode !== 'janken') return;
+                jankenLocked = true;
+                playSound('bad');
+                setMessage('⏰ 時間切れ！次へいきます', 'text-red-600');
+                jankenRoundsLeft--;
+                document.getElementById('statusValue').textContent = `${jankenRoundsLeft}問`;
+                runTimeout(nextJankenRound, 800);
+            }, timeLimit);
+        }
+
+        function handleJankenInput(playerHand) {
+            if (!isPlaying || currentMode !== 'janken' || jankenLocked) return;
+            jankenLocked = true;
+            if (gameTimer) clearTimeout(gameTimer);
+
+            const { cpuHand, ruleType } = jankenCurrentTarget;
+            let isCorrect = false;
+
+            if (ruleType === 'win') {
+                if ((cpuHand === '✊' && playerHand === '🖐️') ||
+                    (cpuHand === '✌️' && playerHand === '✊') ||
+                    (cpuHand === '🖐️' && playerHand === '✌️')) {
+                    isCorrect = true;
+                }
+            } else {
+                if ((cpuHand === '✊' && playerHand === '✌️') ||
+                    (cpuHand === '✌️' && playerHand === '🖐️') ||
+                    (cpuHand === '🖐️' && playerHand === '✊')) {
+                    isCorrect = true;
+                }
+            }
+
+            if (isCorrect) {
+                playSound('good');
+                jankenScore++;
+                document.getElementById('scoreValue').textContent = `${jankenScore}問`;
+                setMessage('⭕ 正解です！頭の切り替えが完璧！', 'text-emerald-700');
+            } else {
+                playSound('bad');
+                setMessage('❌ おっと、指示と違いますよ！', 'text-red-600');
+            }
+
+            jankenRoundsLeft--;
+            document.getElementById('statusValue').textContent = `${jankenRoundsLeft}問`;
+            runTimeout(nextJankenRound, 850);
+        }
+
+        function finishJankenGame() {
+            isPlaying = false;
+            clearAllTimers();
+            playSound('fanfare');
+            const points = calculateChallengePoints(jankenScore, 10, 3);
+            let comment = jankenScore >= 9 ? '全問正解に近い記録！切り替えが見事です！🏆' : jankenScore >= 6 ? '素早く正確に判断できました😊' : '楽しく頭の体操ができましたね！🌱';
+            showResultScreen('✌️', '後出しジャンケン 終了！', `正解数（全10問）`, `${jankenScore} 問正解`, comment, points);
+        }
+
+        /* ==========================================
+           モード8: 名前の順番記憶ゲーム
+        ========================================== */
+        let nameOrderList = [];      
+        let nameOrderUserStep = 0;   
+        let nameOrderLevel = 2;      
+        let nameOrderCorrectStreak = 0;
+
+        const allPossibleNames = [
+            { name: "さくら", icon: "🌸" },
+            { name: "たろう", icon: "👦" },
+            { name: "はなこ", icon: "👧" },
+            { name: "けんじ", icon: "👨" },
+            { name: "ゆみこ", icon: "👩" },
+            { name: "だいすけ", icon: "🧑" },
+            { name: "みどり", icon: "👒" },
+            { name: "ひろし", icon: "👓" },
+            { name: "しろう", icon: "👴" },
+            { name: "きよこ", icon: "👵" }
+        ];
+
+        function initNameOrderGame() {
+            nameOrderLevel = 2; 
+            nameOrderCorrectStreak = 0;
+            startNameOrderRound();
+        }
+
+        function startNameOrderRound() {
+            if (!isPlaying || currentMode !== 'nameOrder') return;
+
+            document.getElementById('statusLabel').textContent = '現在レベル';
+            document.getElementById('statusValue').textContent = `${nameOrderLevel} 人覚え`;
+            document.getElementById('scoreBox').classList.remove('hidden');
+            document.getElementById('scoreLabel').textContent = '連続正解';
+            document.getElementById('scoreValue').textContent = `${nameOrderCorrectStreak} 回`;
+
+            const shuffled = [...allPossibleNames].sort(() => 0.5 - Math.random());
+            nameOrderList = shuffled.slice(0, nameOrderLevel);
+            nameOrderUserStep = 0;
+
+            showNameSequence(0);
+        }
+
+        function showNameSequence(index) {
+            if (!isPlaying || currentMode !== 'nameOrder') return;
+            const board = document.getElementById('gameBoard');
+
+            if (index < nameOrderList.length) {
+                const item = nameOrderList[index];
+                setMessage(`【${nameOrderLevel}人記憶】 順番を覚えて (${index + 1}/${nameOrderList.length}人)`, 'text-purple-900');
+                
+                board.innerHTML = `
+                    <div class="flex flex-col items-center justify-center p-3.5 bg-gradient-to-br from-purple-50 to-indigo-50 border-2 border-purple-300 rounded-3xl w-full max-w-[270px] shadow animate-pop">
+                        <span class="text-5xl mb-1 filter drop-shadow">${item.icon}</span>
+                        <span class="text-xl font-black text-purple-950">${index + 1}番目：${item.name}</span>
+                    </div>
+                `;
+
+                const showTime = difficultyConfig[currentDifficulty].nameOrderTime;
+                spawnTimer = runTimeout(() => {
+                    showNameSequence(index + 1);
+                }, showTime);
+            } else {
+                enterNameOrderAnswerPhase();
+            }
+        }
+
+        function enterNameOrderAnswerPhase() {
+            if (!isPlaying || currentMode !== 'nameOrder') return;
+            setMessage(`【${nameOrderUserStep + 1}番目】に出た人をタッチ！`, 'text-purple-900');
+
+            const board = document.getElementById('gameBoard');
+            const correctItem = nameOrderList[nameOrderUserStep];
+            const otherItems = allPossibleNames.filter(i => !nameOrderList.some(n => n.name === i.name));
+            const dummyCount = Math.min(7, Math.max(3, nameOrderLevel + 1));
+            const dummies = [...otherItems].sort(() => 0.5 - Math.random()).slice(0, dummyCount);
+            const choices = [correctItem, ...dummies].sort(() => 0.5 - Math.random());
+
+            board.innerHTML = `
+                <div class="flex flex-col items-center w-full max-w-[280px] space-y-1">
+                    <div class="bg-purple-100 border border-purple-300 rounded-xl px-2.5 py-0.5 text-center w-full shadow-xs">
+                        <span class="text-xs font-black text-purple-950">いま探す：<span class="text-rose-600">${nameOrderUserStep + 1}番目</span>の人</span>
+                    </div>
+                    <div class="grid grid-cols-4 gap-1.5 w-full">
+                        ${choices.map(c => `
+                            <button onclick="handleNameOrderTap('${c.name}')" class="btn-3d bg-white hover:bg-purple-50 border border-purple-300 rounded-xl p-1 flex flex-col items-center justify-center aspect-square">
+                                <span class="text-2xl">${c.icon}</span>
+                                <span class="text-[12px] font-black text-purple-950 truncate w-full text-center">${c.name}</span>
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function handleNameOrderTap(selectedName) {
+            if (!isPlaying || currentMode !== 'nameOrder') return;
+            const correctItem = nameOrderList[nameOrderUserStep];
+
+            if (selectedName === correctItem.name) {
+                playSound('good');
+                nameOrderUserStep++;
+                if (nameOrderUserStep >= nameOrderList.length) {
+                    nameOrderCorrectStreak++;
+                    nameOrderLevel = Math.min(8, nameOrderLevel + 1);
+                    document.getElementById('scoreValue').textContent = `${nameOrderCorrectStreak} 回`;
+                    setMessage('⭕ 正解！レベルアップします！', 'text-emerald-700');
+                    const board = document.getElementById('gameBoard');
+                    board.innerHTML = `
+                        <div class="flex flex-col items-center justify-center p-3 bg-emerald-50 border-2 border-emerald-400 rounded-3xl w-full max-w-[270px] shadow animate-pop">
+                            <span class="text-3xl mb-1">🎉</span>
+                            <span class="text-sm font-black text-emerald-900">正解！次は ${nameOrderLevel}人 に挑戦！</span>
+                        </div>
+                    `;
+                    spawnTimer = runTimeout(() => {
+                        startNameOrderRound();
+                    }, 1200);
+                } else {
+                    enterNameOrderAnswerPhase();
+                }
+            } else {
+                playSound('bad');
+                setMessage(`❌ 残念！${nameOrderUserStep + 1}番目は「${correctItem.name}」でした`, 'text-red-600');
+                spawnTimer = runTimeout(() => {
+                    finishNameOrderGame();
+                }, 1300);
+            }
+        }
+
+        function finishNameOrderGame() {
+            isPlaying = false;
+            clearAllTimers();
+            playSound('fanfare');
+            const maxReached = nameOrderLevel - 1;
+            const points = calculateChallengePoints(maxReached, 7, 2);
+            let comment = maxReached >= 5 ? 'たくさんの名前を順番に覚えました！すごい！🏆' : maxReached >= 3 ? '素晴らしい集中力と記憶力です！お見事！😊' : '楽しく脳のストレッチができましたね！🌱';
+            showResultScreen('👤', '名前の順番記憶 終了！', `最高到達記録`, `${maxReached} 人の順番`, comment, points);
+        }
+
+        /* ==========================================
+           モード9: 色当てテスト（ストループ効果トレ）新機能
+        ========================================== */
+        let stroopScore = 0;
+        let stroopRoundsLeft = 10;
+        let stroopTargetColor = null;
+        let stroopLocked = false;
+
+        const colorDefinitions = [
+            { name: 'あか', colorClass: 'text-red-600', bgBtn: 'bg-red-500', hex: '#EF4444' },
+            { name: 'あお', colorClass: 'text-blue-600', bgBtn: 'bg-blue-500', hex: '#3B82F6' },
+            { name: 'みどり', colorClass: 'text-emerald-600', bgBtn: 'bg-emerald-500', hex: '#10B981' },
+            { name: 'きいろ', colorClass: 'text-yellow-500', bgBtn: 'bg-yellow-400', hex: '#EAB308' }
+        ];
+
+        function initStroopGame() {
+            stroopScore = 0;
+            stroopRoundsLeft = 10;
+
+            document.getElementById('statusLabel').textContent = 'のこり問題';
+            document.getElementById('statusValue').textContent = `${stroopRoundsLeft}問`;
+            document.getElementById('scoreBox').classList.remove('hidden');
+            document.getElementById('scoreLabel').textContent = '正解数';
+            document.getElementById('scoreValue').textContent = '0問';
+            setMessage('文字に惑わされず「文字のインクの色」をタッチ！', 'text-cyan-900');
+
+            const board = document.getElementById('gameBoard');
+            board.innerHTML = `
+                <div class="flex flex-col items-center w-full max-w-[270px] space-y-2">
+                    <div class="bg-cyan-50 border-2 border-cyan-300 rounded-2xl py-3 px-4 w-full text-center shadow">
+                        <span class="text-[12px] font-black text-gray-500 block">この文字の【 色 】は何色？</span>
+                        <span id="stroopWord" class="text-4xl font-black tracking-widest my-1 block animate-pop">あか</span>
+                    </div>
+                    <div id="stroopGrid" class="grid grid-cols-2 gap-2 w-full">
+                        ${colorDefinitions.map(c => `
+                            <button onclick="handleStroopAnswer('${c.name}')" class="btn-3d bg-white hover:bg-cyan-50 border-2 border-cyan-300 rounded-2xl py-2.5 flex items-center justify-center space-x-1.5">
+                                <span class="w-4 h-4 rounded-full ${c.bgBtn} inline-block border border-gray-300"></span>
+                                <span class="text-lg font-black text-gray-800">${c.name}</span>
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            nextStroopRound();
+        }
+
+        function nextStroopRound() {
+            if (!isPlaying || currentMode !== 'stroop') return;
+            stroopLocked = false;
+            if (stroopRoundsLeft <= 0) {
+                finishStroopGame();
+                return;
+            }
+
+            // テキストと色を意図的にズラす
+            const textItem = colorDefinitions[Math.floor(Math.random() * colorDefinitions.length)];
+            let colorItem = colorDefinitions[Math.floor(Math.random() * colorDefinitions.length)];
+            while (colorItem.name === textItem.name && Math.random() < 0.7) {
+                colorItem = colorDefinitions[Math.floor(Math.random() * colorDefinitions.length)];
+            }
+
+            stroopTargetColor = colorItem.name;
+
+            const wordEl = document.getElementById('stroopWord');
+            wordEl.textContent = textItem.name;
+            wordEl.className = `text-4xl font-black tracking-widest my-1 block animate-pop ${colorItem.colorClass}`;
+
+            const timeLimit = difficultyConfig[currentDifficulty].stroopTime * 1000;
+            if (gameTimer) clearTimeout(gameTimer);
+            gameTimer = runTimeout(() => {
+                if (!isPlaying || currentMode !== 'stroop') return;
+                playSound('bad');
+                stroopLocked = true;
+                setMessage('⏰ 時間切れ！つぎへいきます', 'text-red-600');
+                stroopRoundsLeft--;
+                document.getElementById('statusValue').textContent = `${stroopRoundsLeft}問`;
+                runTimeout(nextStroopRound, 800);
+            }, timeLimit);
+        }
+
+        function handleStroopAnswer(chosenColorName) {
+            if (!isPlaying || currentMode !== 'stroop' || stroopLocked) return;
+            stroopLocked = true;
+            if (gameTimer) clearTimeout(gameTimer);
+
+            if (chosenColorName === stroopTargetColor) {
+                playSound('good');
+                stroopScore++;
+                document.getElementById('scoreValue').textContent = `${stroopScore}問`;
+                setMessage('⭕ 正解！文字に惑わされず見抜けました！', 'text-emerald-700');
+            } else {
+                playSound('bad');
+                setMessage(`❌ 残念！文字の「色」は【${stroopTargetColor}】でした`, 'text-red-600');
+            }
+
+            stroopRoundsLeft--;
+            document.getElementById('statusValue').textContent = `${stroopRoundsLeft}問`;
+            runTimeout(nextStroopRound, 850);
+        }
+
+        function finishStroopGame() {
+            isPlaying = false;
+            clearAllTimers();
+            playSound('fanfare');
+            const points = calculateChallengePoints(stroopScore, 10, 3);
+            let comment = stroopScore >= 9 ? '文字の罠を見抜いたね！見事な正確さです！🏆' : stroopScore >= 6 ? '素早く正確に色を識別できました😊' : 'とても良い脳の抑制トレーニングになりましたね！🌱';
+            showResultScreen('🎨', '色当てテスト 終了！', `正解数（全10問）`, `${stroopScore} 問正解`, comment, points);
+        }
+
+        /* ==========================================
+           モード10: なかまはずれ探し 新機能
+        ========================================== */
+        let oddScore = 0;
+        let oddRoundsLeft = 6;
+        let oddCorrectIndex = -1;
+        let oddLocked = false;
+
+        const oddCategories = [
+            { items: ['🍎', '🍌', '🍇'], odd: '🥕', hint: '1つだけ【野菜】です' },
+            { items: ['🐶', '🐱', '🐰'], odd: '🚗', hint: '1つだけ【乗り物】です' },
+            { items: ['⚽', '⚾', '🏀'], odd: '🎸', hint: '1つだけ【楽器】です' },
+            { items: ['🐦', '🦅', '🦆'], odd: '🐟', hint: '1つだけ【魚】です' },
+            { items: ['🍰', '🍩', '🍪'], odd: '🍙', hint: '1つだけ【おにぎり】です' },
+            { items: ['🌸', '🌻', '🌷'], odd: '🍄', hint: '1つだけ【キノコ】です' }
+        ];
+
+        function initOddOneGame() {
+            oddScore = 0;
+            oddRoundsLeft = difficultyConfig[currentDifficulty].oddRounds;
+
+            document.getElementById('statusLabel').textContent = 'のこり問題';
+            document.getElementById('statusValue').textContent = `${oddRoundsLeft}問`;
+            document.getElementById('scoreBox').classList.remove('hidden');
+            document.getElementById('scoreLabel').textContent = '正解数';
+            document.getElementById('scoreValue').textContent = '0問';
+            setMessage('4つの中から「なかまはずれ」を1つタッチ！', 'text-lime-900');
+
+            const board = document.getElementById('gameBoard');
+            board.innerHTML = `
+                <div class="flex flex-col items-center w-full max-w-[270px] space-y-2">
+                    <div id="oddHintBox" class="bg-lime-50 border-2 border-lime-300 rounded-xl px-2.5 py-1 text-center w-full shadow-xs">
+                        <span id="oddHintText" class="text-xs font-black text-lime-950">仲間はどれかな？</span>
+                    </div>
+                    <div id="oddGrid" class="grid grid-cols-2 gap-2 w-full aspect-square"></div>
+                </div>
+            `;
+
+            nextOddRound();
+        }
+
+        function nextOddRound() {
+            if (!isPlaying || currentMode !== 'oddOne') return;
+            oddLocked = false;
+            if (oddRoundsLeft <= 0) {
+                finishOddGame();
+                return;
+            }
+
+            const cat = oddCategories[Math.floor(Math.random() * oddCategories.length)];
+            const choices = [...cat.items, cat.odd].sort(() => 0.5 - Math.random());
+            oddCorrectIndex = choices.indexOf(cat.odd);
+
+            document.getElementById('oddHintText').textContent = '4つの中から仲間はずれを探そう！';
+
+            const grid = document.getElementById('oddGrid');
+            grid.innerHTML = choices.map((item, idx) => `
+                <button onclick="handleOddTap(${idx})" class="btn-3d bg-white hover:bg-lime-50 border-2 border-lime-300 rounded-2xl flex items-center justify-center text-4xl">
+                    ${item}
+                </button>
+            `).join('');
+        }
+
+        function handleOddTap(idx) {
+            if (!isPlaying || currentMode !== 'oddOne' || oddLocked) return;
+            oddLocked = true;
+
+            if (idx === oddCorrectIndex) {
+                playSound('good');
+                oddScore++;
+                document.getElementById('scoreValue').textContent = `${oddScore}問`;
+                setMessage('⭕ 正解！仲間はずれを素早く発見！', 'text-emerald-700');
+            } else {
+                playSound('bad');
+                setMessage('❌ 違います。もう一度よく見てみよう！', 'text-red-600');
+            }
+
+            oddRoundsLeft--;
+            document.getElementById('statusValue').textContent = `${oddRoundsLeft}問`;
+            runTimeout(nextOddRound, 850);
+        }
+
+        function finishOddGame() {
+            isPlaying = false;
+            clearAllTimers();
+            playSound('fanfare');
+            const totalRounds = difficultyConfig[currentDifficulty].oddRounds;
+            const points = calculateChallengePoints(oddScore, totalRounds, 2);
+            let comment = oddScore >= totalRounds - 1 ? '分類・識別力が非常に鋭いです！頭がとても柔らかい！🏆' : 'しっかり仲間を見分けられましたね！😊';
+            showResultScreen('🔍', 'なかまはずれ探し 終了！', `正解数`, `${oddScore} 問正解`, comment, points);
+        }
+
+        /* ==========================================
+           チャレンジポイント計算ロジック
+        ========================================== */
+        // 遊びのスコア。医学的な脳年齢などを推定するものではありません。
+        function calculateChallengePoints(score, maxScore, minScore) {
+            if (maxScore <= minScore) return 0;
+            const ratio = Math.max(0, Math.min(1, (score - minScore) / (maxScore - minScore)));
+            return Math.round(ratio * 100);
+        }
+
+        /* ==========================================
+           結果画面表示
+        ========================================== */
+        function showResultScreen(emoji, title, label, scoreText, comment, challengePoints = 0) {
+            document.getElementById('resultEmoji').textContent = emoji;
+            document.getElementById('resultTitle').textContent = title;
+            document.getElementById('resultScoreLabel').textContent = label;
+            document.getElementById('resultScoreValue').textContent = scoreText;
+            document.getElementById('resultComment').textContent = comment;
+            document.getElementById('brainAgeNumber').textContent = '🎉';
+
+            const greetingEl = document.getElementById('resultUserGreeting');
+            const ageDiffBadge = document.getElementById('resultAgeDiffBadge');
+
+            if (userProfile.name) {
+                const displayName = userProfile.name.endsWith('さん') || userProfile.name.endsWith('様') ? userProfile.name : `${userProfile.name}さん`;
+                greetingEl.textContent = `${displayName}の本日のチャレンジ`;
+            } else {
+                greetingEl.textContent = '本日のチャレンジ';
+            }
+
+            ageDiffBadge.classList.add('hidden');
+
+            showScreen('resultScreen');
+        }
+
+        // ページロード時初期化
+        window.onload = function() {
+            try {
+                const p = JSON.parse(localStorage.getItem('standalone-profile') || '{}');
+                userProfile.name = typeof p.name === 'string' ? p.name : '';
+                userProfile.age = Number.isFinite(p.age) ? p.age : null;
+                const settings = JSON.parse(localStorage.getItem('standalone-settings') || '{}');
+                if (typeof settings.sound === 'boolean') soundEnabled = settings.sound;
+                document.getElementById('soundIcon').textContent = soundEnabled ? '🔊' : '🔇';
+                if (settings.largeFont) { isLargeFont = true; document.body.classList.add('large-font'); document.getElementById('fontBtnText').textContent = '標準'; }
+            } catch (_) {}
+            try {
+                const r = JSON.parse(localStorage.getItem('standalone-stamps') || '{}');
+                if (Number.isInteger(r.count)) stampCount = Math.min(7, Math.max(0, r.count));
+                todayStamped = r.date === new Date().toLocaleDateString('sv-SE');
+            } catch (_) {}
+            initUserProfile();
+        };
+    </script>
+</body>
+</html>
